@@ -31,6 +31,9 @@ class Communikit_Deactivator
 	 */
 	public static function deactivate ()
 	{
+		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-options.php";
+		Communikit_Options::unset_options ();
+
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-pages.php";
 		Communikit_Pages::remove_pages ();
 

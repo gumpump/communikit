@@ -107,7 +107,14 @@
 		$image_path_alt .= "/wp-content/plugins/communikit/public/images/";
 		$image_path_alt .= "edit_default.png";
 
-		return $image_path_alt;
+		$options = json_decode (get_option ("comk_options"));
+
+		if ($options->edit_image_id == -1)
+		{
+			return $image_path_alt;
+		}
+
+		return wp_get_attachment_image_url ($image_id);
 	}
 
 	function comku_get_user_description ($user_id)

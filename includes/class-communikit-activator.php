@@ -29,5 +29,8 @@ class Communikit_Activator
 
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-pages.php";
 		Communikit_Pages::add_pages ();
+
+		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-options.php";
+		Communikit_Options::set_options ();
 	}
 }

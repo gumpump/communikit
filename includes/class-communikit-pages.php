@@ -1,7 +1,7 @@
 <?php
 	require_once ABSPATH . "wp-admin/includes/post.php";
 
-	class Communikit_pages
+	class Communikit_Pages
 	{
 		public static function add_pages ()
 		{
@@ -50,7 +50,7 @@
 
 		public static function remove_pages ()
 		{
-			remove_option ("comk_page_edit");
-			remove_option ("comk_page_user");
+			delete_option ("comk_page_edit");
+			delete_option ("comk_page_user");
 		}
 	}

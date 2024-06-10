@@ -13,7 +13,7 @@
 		</div>
 		<input type="hidden" name="comki-type" value="change_bio" />
 		<div class="comk-box_edit_button">
-			<input type="submit" value="Change description" />
+			<input type="submit" value=<?php print (__("Change description", "communikit")); ?> />
 		</div>
 	</div>
 	</form>

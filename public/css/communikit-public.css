@@ -1,0 +1,118 @@
+/* If a block doesn't react accordingly to the settings in the editor, use this */
+div.comk-outer_block
+{
+	width: fit-content;
+	height: fit-content;
+}
+
+/* FORM-BLOCKS */
+div.comk-input
+{
+	position: relative;
+}
+
+.comk-input_label
+{
+	font-size: 13px;
+	position: absolute;
+	pointer-events: none;
+	top: 3px;
+	left: 8px;
+	transition: all 0.4s ease;
+}
+
+input:focus ~ .comk-input_label,
+input:not(:placeholder-shown) ~ .comk-input_label
+{
+	left: unset;
+	right: 5px;
+}
+
+/* BOX-BLOCKS */
+div.comk-box_loginout_outer_block
+{
+	display: flex;
+	width: 250px;
+	justify-content: space-between;
+	padding: 5px;
+}
+
+div.comk-box_loginout_inner_block
+{
+}
+
+p.comk-box_loginout_username
+{
+	margin: 0px;
+	font-size: 20px;
+	font-family: Arial;
+	height: 70%;
+}
+
+img.comk-box_loginout_img
+{
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+div.comk-box_edit_outer_block
+{
+	width: 600px;
+	padding: 5px;
+}
+
+div.comk-box_edit_inner_block
+{
+	display: flex;
+	justify-content: center;
+}
+
+figure.comk-box_edit_figure
+{
+	margin: 0px 30px;
+}
+
+img.comk-box_edit_image_preview
+{
+	width: 200px;
+	height: 200px;
+}
+
+textarea.comk-box_edit_biography_text
+{
+	width: 550px;
+	height: 300px;
+	font-size: 1.3rem;
+	resize: none;
+}
+
+div.comk-box_edit_button
+{
+	margin: 4px 0px;
+}
+
+/* USER-BLOCKS */
+img.comk-user_edit
+{
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+
+img.comk-user_img
+{
+	width: 100px;
+	height: 100px;
+}
+
+img.comk-user_img_rounded
+{
+	border-radius: 50%;
+}
+
+h2.comk-user_name
+{
+	display: contents;
+}

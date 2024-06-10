@@ -1,0 +1,8 @@
+<Project Sdk="Devsense.Php.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>edbb0c4a-3b6e-49c1-8050-ef4332438d2d</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnvName>PHPDev</EnvName>
+  </PropertyGroup>
+</Project>

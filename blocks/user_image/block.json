@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "communikit/user-image",
+  "title": "CommuniKit - User - Image",
+  "category": "comkb_category_user",
+  "description": "Profile image of a user",
+  "render": "file:./render.php",
+  "keywords": [
+    "profile",
+    "image",
+    "user",
+    "field"
+  ],
+  "textdomain": "communikit",
+  "version": "0.1.0",
+  "icon": "format-image",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "rounded": {
+      "type": "boolean"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}

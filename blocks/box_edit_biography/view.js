@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("comk-box_edit_image_upload");e.addEventListener("change",(function(){const t=e.files;if(t){const e=new FileReader,n=document.getElementById("comk-box_edit_image_preview_target");e.onload=e=>{n.setAttribute("src",e.target.result)},e.readAsDataURL(t[0])}}))})();

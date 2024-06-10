@@ -1,0 +1,28 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+@font-face
+{
+	font-family: Comfortaa-admin;
+	src: url("../fonts/Comfortaa.ttf");
+}
+
+:root
+{
+	--comk_border: #2271b1;
+	--comk_button: #f6f7f7;
+	--comk_profile-image: url ("../../public/images/profile_default.png");
+}
+
+.comk_common
+{
+	font-family: Comfortaa-admin;
+}
+
+img.comk-edit_icon
+{
+	width: 100px;
+	height: 100px;
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "communikit/user-biography",
+  "title": "CommuniKit - User - Biography",
+  "category": "comkb_category_user",
+  "description": "Biography of a user",
+  "render": "file:./render.php",
+  "keywords": [
+    "profile",
+    "biography",
+    "description",
+    "user"
+  ],
+  "textdomain": "communikit",
+  "version": "0.1.0",
+  "icon": "book",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}

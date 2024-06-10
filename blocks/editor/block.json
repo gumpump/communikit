@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "communikit/input-field",
+  "title": "CommuniKit - Input - Field",
+  "ancestor": [
+    "communikit/input-form"
+  ],
+  "category": "comkb_category",
+  "description": "Input field for use in CommuniKit-forms",
+  "render": "file:./render.php",
+  "keywords": [
+    "form",
+    "login",
+    "user",
+    "password",
+    "name",
+    "field"
+  ],
+  "textdomain": "communikit",
+  "version": "0.1.0",
+  "icon": "admin-generic",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "required": {
+      "type": "boolean"
+    },
+    "field_type": {
+      "type": "string",
+      "default": "{\"label\":\"Undefined input\",\"ident\":\"undefined\",\"type\":\"text\"}"
+    }
+  },
+  "usesContext": [
+    "communikit/form_type"
+  ],
+  "editorScript": "file:./index.js"
+}

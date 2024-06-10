@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.wp.blocks,n=window.React,t=(window.wp.i18n,window.wp.blockEditor),i=JSON.parse('{"u2":"communikit/user-name"}');(0,e.registerBlockType)(i.u2,{edit:function(){return(0,n.createElement)("div",{...(0,t.useBlockProps)()},(0,n.createElement)("h2",{class:"comku-headline_name"},"Username"))},save:function(){return null}})})();

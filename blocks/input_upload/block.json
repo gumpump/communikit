@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "communikit/input-upload",
+  "title": "CommuniKit - Input - Upload",
+  "ancestor": [
+    "communikit/input-form"
+  ],
+  "category": "comkb_category_form",
+  "description": "Upload field for use in CommuniKit-forms",
+  "render": "file:./render.php",
+  "keywords": [
+    "form",
+    "profile",
+    "user",
+    "image",
+    "upload",
+    "field"
+  ],
+  "textdomain": "communikit",
+  "version": "0.1.0",
+  "icon": "admin-media",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js"
+}

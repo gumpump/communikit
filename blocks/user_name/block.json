@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "communikit/user-name",
+  "title": "CommuniKit - User - Name",
+  "category": "comkb_category_user",
+  "description": "Name of a user",
+  "render": "file:./render.php",
+  "keywords": [
+    "profile",
+    "name",
+    "user"
+  ],
+  "textdomain": "communikit",
+  "version": "0.1.0",
+  "icon": "nametag",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}

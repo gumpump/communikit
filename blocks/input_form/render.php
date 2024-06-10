@@ -9,11 +9,10 @@
 	// Choose the right text to show on the submit button
 	switch ($form_type)
 	{
-		// TODO: Translate
-		case "log_in": { $submit_value = "Log in"; break; }
-		case "log_out": { $submit_value = "Log out"; break; }
-		case "sign_in": { $submit_value = "Sign in"; break; }
-		case "edit_data": { $submit_value = "Save changes"; break; }
+		case "log_in": { $submit_value = __("Log in", "communikit"); break; }
+		case "log_out": { $submit_value = __("Log out", "communikit"); break; }
+		case "sign_in": { $submit_value = __("Sign in", "communikit"); break; }
+		case "edit_data": { $submit_value = __("Save changes", "communikit"); break; }
 	}
 
 	if (isset ($_REQUEST["comki-type"]) && $_REQUEST["comki-type"] == "sign_in" &&

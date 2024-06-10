@@ -5,14 +5,13 @@
 	{
 ?>
 <div>
-	<p><?php print ("Something went wrong"); /* TODO: Translate */ ?></p>
+	<p><?php print (__("Something went wrong", "communikit")); ?></p>
 </div>
 <?php
 	}
 
 	else
 	{
-		// TODO: Translate
 		$username = $user->display_name;
 ?>
 <div>

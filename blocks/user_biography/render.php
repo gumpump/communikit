@@ -5,15 +5,14 @@
 	{
 ?>
 <div>
-	<p><?php print ("Something went wrong"); /* TODO: Translate */ ?></p>
+	<p><?php print (__("Something went wrong", "communikit")); ?></p>
 </div>
 <?php
 	}
 
 	else
 	{
-		// TODO: Translate
-		$description = ($user === false) ? "No description available" : $user->user_description;
+		$description = ($user === false) ? __("No description available", "communikit") : $user->user_description;
 ?>
 <div <?php get_block_wrapper_attributes (); ?>>
 	<div>

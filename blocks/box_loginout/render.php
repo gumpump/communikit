@@ -18,8 +18,7 @@
 		<p class="comk-box_loginout_username"><?=$username->display_name?></p>
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="post">
 			<input type="hidden" name="comki-type" value="log_out" />
-			<!-- TODO: Translate -->
-			<input type="submit" value="Log out" />
+			<input type="submit" value="<?php __("Log out", "communikit"); ?>" />
 		</form>
 	</div>
 	<a href="<?=$link_to_profile?>">
@@ -37,13 +36,11 @@
 	<form action="<?=$_SERVER["REQUEST_URI"]?>" method="post">
 		<div class="comk-input">
 			<input type="text" name="comki-username" placeholder="" autocomplete="off" required />
-			<!-- TODO: Translate -->
-			<label for="comki-username" class="comk-input_label">Username</label>
+			<label for="comki-username" class="comk-input_label"><?php __("Username", "communikit"); ?></label>
 		</div>
 		<div class="comk-input">
 			<input type="password" name="comki-password" placeholder="" autocomplete="off" required />
-			<!-- TODO: Translate -->
-			<label for="comki-password" class="comk-input_label">Password</label>
+			<label for="comki-password" class="comk-input_label"><?php __("Password", "communikit"); ?></label>
 		</div>
 		<input type="hidden" name="comki-type" value="log_in" />
 		<input type="submit" value="Log in" />

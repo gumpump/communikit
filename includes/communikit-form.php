@@ -19,8 +19,7 @@
 
 					if ($result === false)
 					{
-						// TODO: Translate
-						comk_add_error ("Username already exists");
+						comk_add_error (__("Username already exists", "communikit"));
 						return;
 					}
 
@@ -33,8 +32,7 @@
 
 					if (is_wp_error ($user))
 					{
-						// TODO: Translate
-						comk_add_error ("Wrong username or wrong password");
+						comk_add_error (__("Wrong username or wrong password", "communikit"));
 						return;
 					}
 
@@ -64,36 +62,31 @@
 					!isset ($_REQUEST["comki-password"]) ||
 					!isset ($_REQUEST["comki-email"]))
 				{
-					// TODO: Translate
-					comk_add_error ("Missing input field");
+					comk_add_error (__("Missing input field", "communikit"));
 					return;
 				}
 
 				if (username_exists ($_REQUEST["comki-username"]))
 				{
-					// TODO: Translate
-					comk_add_error ("Username already exists");
+					comk_add_error (__("Username already exists", "communikit"));
 					return;
 				}
 
 				if (!validate_username ($_REQUEST["comki-username"]))
 				{
-					// TODO: Translate
-					comk_add_error ("Invalid username");
+					comk_add_error (__("Invalid username", "communikit"));
 					return;
 				}
 
 				if (email_exists ($_REQUEST["comki-email"]))
 				{
-					// TODO: Translate
-					comk_add_error ("Email address already exists");
+					comk_add_error (__("Email address already exists", "communikit"));
 					return;
 				}
 
 				if (!is_email ($_REQUEST["comki-email"]))
 				{
-					// TODO: Translate
-					comk_add_error ("Invalid email address");
+					comk_add_error (__("Invalid email address", "communikit"));
 					return;
 				}
 
@@ -141,8 +134,7 @@
 			{
 				if (!isset ($_REQUEST["comki-bio"]))
 				{
-					// TODO: Translate
-					comk_add_error ("Could not find comki-bio input field");
+					comk_add_error (__("Could not find comki-bio input field", "communikit"));
 					return;
 				}
 
@@ -163,15 +155,13 @@
 					if (email_exists ($_REQUEST["comki-email"]) &&
 						$_REQUEST["comki-email"] != $userdata->user_email)
 					{
-						// TODO: Translate
-						comk_add_error ("Email address already exists");
+						comk_add_error (__("Email address already exists", "communikit"));
 						return;
 					}
 
 					if (!is_email ($_REQUEST["comki-email"]))
 					{
-						// TODO: Translate
-						comk_add_error ("Invalid email address");
+						comk_add_error (__("Invalid email address", "communikit"));
 						return;
 					}
 

@@ -13,8 +13,7 @@
 	{
 		public static function set_roles ()
 		{
-			// TODO: Translate
-			add_role ("comk-basic_user", "Basic user", array ());
+			add_role ("comk-basic_user", __("Basic user", "communikit"), array ());
 		}
 
 		public static function unset_roles ()

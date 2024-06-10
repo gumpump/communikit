@@ -7,13 +7,12 @@
 		{
 			$page_user_content = file_get_contents (ABSPATH . "wp-content/plugins/communikit/templates/user-profile.php", true);
 
-			// TODO: Translate
 			$page_user =	array
 							(
-								"post_title" => "User",
+								"post_title" => __("User", "communikit"),
 								"post_content" => $page_user_content,
-								"post_type" => "page",
-								"post_status" => "publish"
+								"post_type" => __("page", "communikit"),
+								"post_status" => __("publish", "communikit")
 							);
 
 			$page_user_id = wp_insert_post ($page_user);
@@ -21,8 +20,7 @@
 			if ($page_user_id === 0 ||
 				is_wp_error ($page_user_id))
 			{
-				// TODO: Translate
-				comk_add_error ("Could not insert default user profile page");
+				comk_add_error (__("Could not insert default user profile page", "communikit"));
 				return;
 			}
 
@@ -30,13 +28,12 @@
 
 			$page_edit_content = file_get_contents (ABSPATH . "wp-content/plugins/communikit/templates/user-profile.php", true);
 
-			// TODO: Translate
 			$page_edit =	array
 							(
-								"post_title" => "Edit",
+								"post_title" => __("Edit", "communikit"),
 								"post_content" => $page_edit_content,
-								"post_type" => "page",
-								"post_status" => "publish"
+								"post_type" => __("page", "communikit"),
+								"post_status" => __("publish", "communikit")
 							);
 
 			$page_edit_id = wp_insert_post ($page_edit);
@@ -44,8 +41,7 @@
 			if ($page_edit_id === 0 ||
 				is_wp_error ($page_edit_id))
 			{
-				// TODO: Translate
-				comk_add_error ("Could not insert default edit page");
+				comk_add_error (__("Could not insert default edit page", "communikit"));
 				return;
 			}
 

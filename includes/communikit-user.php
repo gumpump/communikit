@@ -47,20 +47,18 @@
 
 		if (!empty ($upload["error"]))
 		{
-			// TODO: Translate
-			comk_add_error ("Could not upload file");
+			comk_add_error (__("Could not upload file", "communikit"));
 			return;
 		}
 
 		$username = get_user_by ("id", $user_id);
 
 		// TODO: Fill attachment with meaningful data
-		// TODO: Translate
 		$image_id = wp_insert_attachment (	array
 											(
 												"guid" => $upload["url"],
 												"post_mime_type" => $upload["type"],
-												"post_title" => "Profile-picture " . $username->user_login,
+												"post_title" => __("Profile-picture ", "communikit") . $username->user_login,
 												"post_content" => "",
 												"post_status" => "inherit"
 											),
@@ -68,8 +66,7 @@
 
 		if (is_wp_error ($image_id) || $image_id === 0)
 		{
-			// TODO: Translate
-			comk_add_error ("Could not insert file into media library");
+			comk_add_error (__("Could not insert file into media library", "communikit"));
 			return;
 		}
 

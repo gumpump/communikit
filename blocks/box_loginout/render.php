@@ -43,7 +43,7 @@
 			<label for="comki-password" class="comk-input_label"><?php print (__("Password", "communikit")); ?></label>
 		</div>
 		<input type="hidden" name="comki-type" value="log_in" />
-		<input type="submit" value="Log in" />
+		<input type="submit" value="<?php print (__("Log in", "communikit")); ?>" />
 	</form>
 </div>
 <?php

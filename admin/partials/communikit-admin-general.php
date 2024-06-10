@@ -8,8 +8,7 @@
 		<tbody>
 			<tr>
 				<th scope="row">
-					<!-- TODO: Translate -->
-					<label for="comka-user_page">Page to diplay as user profile</label>
+					<label for="comka-user_page"><?php print (__("Page to diplay as user profile", "communikit")); ?></label>
 				</th>
 				<td>
 					<select id="comka-user_page" name="comka-user_page">
@@ -21,8 +20,7 @@
 			</tr>
 			<tr>
 				<th scope="row">
-					<!-- TODO: Translate -->
-					<label for="comka-edit_page">Page to diplay for editing user profiles</label>
+					<label for="comka-edit_page"><?php print (__("Page to diplay for editing user profiles", "communikit")); ?></label>
 				</th>
 				<td>
 					<select id="comka-edit_page" name="comka-edit_page">
@@ -38,8 +36,7 @@
 			</tr>
 			<tr>
 				<th scope="row">
-					<!-- TODO: Translate -->
-					<label for="comka-edit_icon">Image to display as "Edit"-symbol</label>
+					<label for="comka-edit_icon"><?php print (__('Image to display as "Edit"-symbol', "communikit")); ?></label>
 				</th>
 				<td>
 					<img class="comk-edit_icon" src="<?php print ($edit_image); ?>" />

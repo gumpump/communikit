@@ -22,16 +22,18 @@ $key = "comka_settings";
 	<h1 class="comk_common"><?=$page_title?></h1>
 	<nav class="nav-tab-wrapper">
 		<a href="?page=<?php print ($key); ?>" class="nav-tab <?php if ($tab === null) {?>nav-tab-active<?php }?>"><?php echo __("General", $plugin_name)?></a>
-		<a href="?page=<?php print($key); ?>&tab=user_list" class="nav-tab <?php if ($tab === "user_list") {?>nav-tab-active<?php }?>"><?php echo __("User list", $plugin_name)?></a>
+		<a href="?page=<?php print($key); ?>&tab=user_list" class="nav-tab <?php if ($tab === "user_list") {?>nav-tab-active<?php }?>"><?php echo __("Temp", $plugin_name)?></a>
 	</nav>
 	<div class="comk_spacer"></div>
 	<div class="tab-content">
-		<?php switch ($tab) { case "user_list":?>
-			<!-- User list -->
-		<?php break;?>
-		<?php default:?>
+		<?php switch ($tab) { default: ?>
 			<!-- General -->
 			<?php require_once plugin_dir_path (__FILE__) . "communikit-admin-general.php"; ?>
-		<?php break; }?>
+		<?php break; ?>
+		
+		<?php case "user_list":?>
+			<!-- Temp -->
+		<?php break; } ?>
+		
 	</div>
 </div>

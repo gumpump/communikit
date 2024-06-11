@@ -13,7 +13,7 @@
  */
 
 $default_tab = null;
-$tab = isset ($_GET['tab']) ? $_GET['tab'] : $default_tab;
+$tab = isset ($_REQUEST['tab']) ? $_REQUEST['tab'] : $default_tab;
 $page_title = esc_html (get_admin_page_title ());
 $plugin_name = "communikit";
 $key = "comka_settings";
@@ -21,17 +21,17 @@ $key = "comka_settings";
 <div class="wrap">
 	<h1 class="comk_common"><?=$page_title?></h1>
 	<nav class="nav-tab-wrapper">
-		<a href="?page=<?php print ($key); ?>" class="nav-tab <?php if ($tab === null) {?>nav-tab-active<?php }?>"><?php echo __("General", $plugin_name)?></a>
-		<a href="?page=<?php print($key); ?>&tab=user_list" class="nav-tab <?php if ($tab === "user_list") {?>nav-tab-active<?php }?>"><?php echo __("Temp", $plugin_name)?></a>
+		<a href="?page=<?php print ($key); ?>&tab=general" class="nav-tab <?php if ($tab === "general" || $tab === null) {?>nav-tab-active<?php }?>"><?php echo __("General", $plugin_name)?></a>
+		<a href="?page=<?php print ($key); ?>&tab=temp" class="nav-tab <?php if ($tab === "temp") {?>nav-tab-active<?php }?>"><?php echo __("Temp", $plugin_name)?></a>
 	</nav>
 	<div class="comk_spacer"></div>
 	<div class="tab-content">
-		<?php switch ($tab) { default: ?>
+		<?php switch ($tab) { default: case "general": ?>
 			<!-- General -->
 			<?php require_once plugin_dir_path (__FILE__) . "communikit-admin-general.php"; ?>
 		<?php break; ?>
 		
-		<?php case "user_list":?>
+		<?php case "temp":?>
 			<!-- Temp -->
 		<?php break; } ?>
 		

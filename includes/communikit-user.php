@@ -95,6 +95,12 @@
 		return get_permalink (get_option ("comk_page_user"));
 	}
 
+	function comku_get_user_page_slug ()
+	{
+		$page = get_post (get_option ("comk_page_user"));
+		return $page->post_name;
+	}
+
 	function comku_get_edit_page_url ()
 	{
 		return get_permalink (get_option ("comk_page_edit"));
@@ -109,12 +115,62 @@
 
 		$options = json_decode (get_option ("comk_options"));
 
+		// TODO: Simplify into ternary
 		if ($options->edit_image_id == -1)
 		{
 			return $image_path_alt;
 		}
 
-		return wp_get_attachment_image_url ($image_id);
+		return wp_get_attachment_image_url ($options->edit_image_id);
+	}
+
+	function comku_change_edit_image ()
+	{
+		require_once ABSPATH . "wp-admin/includes/file.php";
+
+		// TODO: Check if the file really is an image
+		$upload = wp_handle_upload ($_FILES["comka-edit_icon"], ["test_form" => false]);
+		// TODO: Look up $upload["type"]
+
+		if (!empty ($upload["error"]))
+		{
+			comk_add_error (__("Could not upload file", "communikit"));
+			return;
+		}
+
+		// TODO: Fill attachment with meaningful data
+		$image_id = wp_insert_attachment (	array
+											(
+												"guid" => $upload["url"],
+												"post_mime_type" => $upload["type"],
+												"post_title" => __("Edit-icon ", "communikit"),
+												"post_content" => "",
+												"post_status" => "inherit"
+											),
+											$upload["file"]);
+
+		if (is_wp_error ($image_id) || $image_id === 0)
+		{
+			comk_add_error (__("Could not insert file into media library", "communikit"));
+			return;
+		}
+
+		require_once ABSPATH . "wp-admin/includes/image.php";
+
+		wp_update_attachment_metadata (	$image_id,
+										wp_generate_attachment_metadata (	$image_id,
+																			$upload["file"]));
+
+		$options = json_decode (get_option ("comk_options"));
+
+		if ($options->edit_image_id != null)
+		{
+			wp_delete_attachment ((int)$options->edit_image_id);
+		}
+
+		$options = [];
+		$options["edit_image_id"] = $image_id;
+		update_option ("comk_options", json_encode ($options));
 	}
 
 	function comku_get_user_description ($user_id)

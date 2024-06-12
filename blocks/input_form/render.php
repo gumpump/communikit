@@ -27,7 +27,7 @@
 	if ($form_type == "edit_data")
 	{
 		require_once plugin_dir_path (__FILE__) . "../../includes/communikit-form.php";
-		print ("'" . $content . "'");
+
 		$form_fields = comk_form_filler ($content);
 	}
 

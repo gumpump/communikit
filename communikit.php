@@ -58,9 +58,10 @@ require_once plugin_dir_path (__FILE__) . "includes/communikit-user.php";
 
 function redirect_permalink ()
 {
-	// TODO: Repair the hard link
 	add_rewrite_rule (	basename (comku_get_user_page_url ()) . '/([a-zA-Z0-9\-]+)',
 						'index.php?pagename=' . comku_get_user_page_slug () . '&user-name=$matches[1]', "top");
+	add_rewrite_rule (	basename (comku_get_edit_page_url ()) . '/([a-zA-Z0-9\-]+)',
+						'index.php?pagename=' . comku_get_edit_page_slug () . '&user-name=$matches[1]', "top");
 	add_filter ("query_vars",	function ($query_vars)
 								{
 									$query_vars[] = "user-name";

@@ -19,7 +19,6 @@
 		isset ($attributes["forwarding"]) && $attributes["forwarding"] == true &&
 		isset ($attributes["post"]["url"]))
 	{
-		// TODO: Look up wp_safe_redirect
 		wp_safe_redirect ($attributes["post"]["url"]);
 	}
 
@@ -28,7 +27,7 @@
 	if ($form_type == "edit_data")
 	{
 		require_once plugin_dir_path (__FILE__) . "../../includes/communikit-form.php";
-
+		print ("'" . $content . "'");
 		$form_fields = comk_form_filler ($content);
 	}
 

@@ -26,7 +26,7 @@
 
 			add_option ("comk_page_user", $page_user_id);
 
-			$page_edit_content = file_get_contents (ABSPATH . "wp-content/plugins/communikit/templates/user-profile.php", true);
+			$page_edit_content = file_get_contents (ABSPATH . "wp-content/plugins/communikit/templates/user-edit.php", true);
 
 			$page_edit =	array
 							(

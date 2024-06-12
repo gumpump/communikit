@@ -8,8 +8,6 @@
 
 	if (isset ($_REQUEST["submit"]))
 	{
-		// TODO: Save settings
-		// TODO: Save image to media library
 		update_option ("comk_page_user", ((isset ($_REQUEST["comka-user_page"])) ? $_REQUEST["comka-user_page"] : $page_user_id));
 		update_option ("comk_page_edit", ((isset ($_REQUEST["comka-edit_page"])) ? $_REQUEST["comka-edit_page"] : $page_edit_id));
 

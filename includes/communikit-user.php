@@ -106,6 +106,12 @@
 		return get_permalink (get_option ("comk_page_edit"));
 	}
 
+	function comku_get_edit_page_slug ()
+	{
+		$page = get_post (get_option ("comk_page_edit"));
+		return $page->post_name;
+	}
+
 	function comku_get_edit_image_url ()
 	{
 		// Prepare 
@@ -115,13 +121,7 @@
 
 		$options = json_decode (get_option ("comk_options"));
 
-		// TODO: Simplify into ternary
-		if ($options->edit_image_id == -1)
-		{
-			return $image_path_alt;
-		}
-
-		return wp_get_attachment_image_url ($options->edit_image_id);
+		return (($options->edit_image_id == -1) ? $image_path_alt : wp_get_attachment_image_url ($options->edit_image_id));
 	}
 
 	function comku_change_edit_image ()

@@ -120,7 +120,6 @@
 			{
 				$user_id = get_current_user_id ();
 
-				// TODO: Change
 				if (!empty ($_FILES["comki-upload"]))
 				{
 					require_once plugin_dir_path (__FILE__) . "communikit-user.php";

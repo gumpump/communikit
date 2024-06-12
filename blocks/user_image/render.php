@@ -23,6 +23,7 @@
 
 		require_once plugin_dir_path (__FILE__) . '../../includes/communikit-user.php';
 		$image_path = comku_get_user_image_url ($user_id);
+		$edit_path	= comku_get_edit_page_url () . $user->user_login;
 ?>
 <div class="comk-outer_block">
 	<img class="<?=$img_classes?>" src="<?=$image_path?>">
@@ -31,7 +32,7 @@
 		{
 			$edit_image = comku_get_edit_image_url ();
 	?>
-		<a href="#"><img class="comk-user_edit" src="<?php print ($edit_image); ?>" /></a>
+		<a href="<?php print ($edit_path); ?>"><img class="comk-user_edit" src="<?php print ($edit_image); ?>" /></a>
 	<?php
 		}
 	?>

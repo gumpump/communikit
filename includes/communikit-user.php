@@ -41,9 +41,7 @@
 	{
 		require_once ABSPATH . "wp-admin/includes/file.php";
 
-		// TODO: Check if the file really is an image
 		$upload = wp_handle_upload ($_FILES["comki-upload"], ["test_form" => false]);
-		// TODO: Look up $upload["type"]
 
 		if (!empty ($upload["error"]))
 		{
@@ -51,15 +49,20 @@
 			return;
 		}
 
+		if (!str_contains ($upload["type"], "/image"))
+		{
+			comk_add_error (__("Uploaded file is not an image", "communikit"));
+			return;
+		}
+
 		$username = get_user_by ("id", $user_id);
 
-		// TODO: Fill attachment with meaningful data
 		$image_id = wp_insert_attachment (	array
 											(
 												"guid" => $upload["url"],
 												"post_mime_type" => $upload["type"],
 												"post_title" => __("Profile-picture ", "communikit") . $username->user_login,
-												"post_content" => "",
+												"post_content" => __("Current profile picture of " . $username->user_login, "communikit"),
 												"post_status" => "inherit"
 											),
 											$upload["file"]);
@@ -128,9 +131,7 @@
 	{
 		require_once ABSPATH . "wp-admin/includes/file.php";
 
-		// TODO: Check if the file really is an image
 		$upload = wp_handle_upload ($_FILES["comka-edit_icon"], ["test_form" => false]);
-		// TODO: Look up $upload["type"]
 
 		if (!empty ($upload["error"]))
 		{
@@ -138,13 +139,18 @@
 			return;
 		}
 
-		// TODO: Fill attachment with meaningful data
+		if (!str_contains ($upload["type"], "/image"))
+		{
+			comk_add_error (__("Uploaded file is not an image", "communikit"));
+			return;
+		}
+
 		$image_id = wp_insert_attachment (	array
 											(
 												"guid" => $upload["url"],
 												"post_mime_type" => $upload["type"],
 												"post_title" => __("Edit-icon ", "communikit"),
-												"post_content" => "",
+												"post_content" => __("Icon to show next to editable objects", "communikit"),
 												"post_status" => "inherit"
 											),
 											$upload["file"]);

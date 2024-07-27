@@ -12,7 +12,10 @@
 	{
 ?>
 <div>
-	<p><?php print (__("Something went wrong", "communikit")); ?></p>
+	<p><?php
+			// TODO: Replace print with comk_add_error ()
+			print (__("Something went wrong", "communikit"));
+	?></p>
 </div>
 <?php
 	}
@@ -32,7 +35,7 @@
 		{
 			$edit_image = comku_get_edit_image_url ();
 	?>
-		<a href="<?php print ($edit_path); ?>"><img class="comk-user_edit" src="<?php print ($edit_image); ?>" /></a>
+		<a class="comk-user_edit_link" href="<?php print ($edit_path); ?>"><img class="comk-user_edit_img" src="<?php print ($edit_image); ?>" /></a>
 	<?php
 		}
 	?>

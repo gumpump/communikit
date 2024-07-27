@@ -21,6 +21,7 @@ div.comk-input
 	transition: all 0.4s ease;
 }
 
+/* INPUT-LABELS*/
 input:focus ~ .comk-input_label,
 input:not(:placeholder-shown) ~ .comk-input_label
 {
@@ -47,6 +48,11 @@ p.comk-box_loginout_username
 	font-size: 20px;
 	font-family: Arial;
 	height: 70%;
+}
+
+a.comk-box_loginout_link
+{
+	outline: none;
 }
 
 img.comk-box_loginout_img
@@ -94,7 +100,12 @@ div.comk-box_edit_button
 }
 
 /* USER-BLOCKS */
-img.comk-user_edit
+a.comk-user_edit_link
+{
+	outline: none;
+}
+
+img.comk-user_edit_img
 {
 	width: 20px;
 	height: 20px;

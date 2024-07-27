@@ -84,6 +84,30 @@ function session_init ()
 
 add_action ("init", "session_init");
 
+function show_errors ()
+{
+	?>
+		<script>
+			var messages = <?php echo json_encode (comk_get_errors ()); ?>;
+			var elements = document.getElementsByClassName ("comk-error_messages");
+
+			var keys = Object.keys (elements);
+			for (k in keys)
+			{
+				for (m in messages)
+				{
+					const message = document.createElement ("div");
+					message.classList.add ("comk-error_message");
+					message.appendChild (document.createTextNode (messages[m]));
+					elements[k].appendChild (message);
+				}
+			}
+		</script>
+	<?php
+}
+
+add_action ("shutdown", "show_errors");
+
 require plugin_dir_path (__FILE__) . 'includes/class-communikit.php';
 
 function run_communikit ()

@@ -123,7 +123,6 @@
 		$image_path_alt .= "edit_default.png";
 
 		$options = json_decode (get_option ("comk_options"));
-
 		return (($options->edit_image_id == -1) ? $image_path_alt : wp_get_attachment_image_url ($options->edit_image_id));
 	}
 
@@ -139,9 +138,9 @@
 			return;
 		}
 
-		if (!str_contains ($upload["type"], "/image"))
+		if (!str_contains ($upload["type"], "image/"))
 		{
-			comk_add_error (__("Uploaded file is not an image", "communikit"));
+			comk_add_error (__("Uploaded file is not an image: " . $upload["type"], "communikit"));
 			return;
 		}
 

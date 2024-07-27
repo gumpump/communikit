@@ -21,7 +21,7 @@
 			<input type="submit" value="<?php print (__("Log out", "communikit")); ?>" />
 		</form>
 	</div>
-	<a href="<?=$link_to_profile?>">
+	<a class="comk-box_loginout_link" href="<?=$link_to_profile?>">
 		<img class="comk-box_loginout_img" src="<?=$image_path?>" />
 	</a>
 </div>

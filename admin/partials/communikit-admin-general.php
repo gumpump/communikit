@@ -11,12 +11,17 @@
 		update_option ("comk_page_user", ((isset ($_REQUEST["comka-user_page"])) ? $_REQUEST["comka-user_page"] : $page_user_id));
 		update_option ("comk_page_edit", ((isset ($_REQUEST["comka-edit_page"])) ? $_REQUEST["comka-edit_page"] : $page_edit_id));
 
-		if (isset ($_FILES["comka-edit_icon"]))
+		if (isset ($_FILES["comka-edit_icon"]) and $_FILES["comka-edit_icon"]["size"] > 0)
 		{
 			comku_change_edit_image ();
 		}
 	}
+
+	/*
+	 * The following HTML code only shows when the associated tab is active
+	*/
 ?>
+<div class="comk-error_messages"></div>
 <form method="post" action="?page=comka_settings" enctype="multipart/form-data">
 	<table class="form-table" role="presentation">
 		<tbody>
@@ -53,8 +58,13 @@
 					<label for="comka-edit_icon"><?php print (__('Image to display as "Edit"-symbol', "communikit")); ?></label>
 				</th>
 				<td>
-					<img class="comk-edit_icon" src="<?php print ($edit_image); ?>" />
-					<input type="file" id="comka-edit_icon" name="comka-edit_icon" accept="image/*" />
+					<div>
+						<img class="comk-edit_icon" src="<?php print ($edit_image); ?>" />
+						<input type="file" id="comka-edit_icon" name="comka-edit_icon" accept="image/*" />
+					</div>
+					<div>
+						<input type="button"
+					</div>
 				</td>
 			</tr>
 			<tr>

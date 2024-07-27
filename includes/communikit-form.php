@@ -218,7 +218,6 @@
 			$value = "";
 
 			// I should optimize this
-			// TODO: Optimize this
 			if (str_contains ($sub, "email"))
 			{
 				$value = $userdata->user_email;

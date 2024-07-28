@@ -25,12 +25,14 @@
 
 			else
 			{
+				comk_add_error (__("Could not decode user metadata", "communikit"));
 				$image_path = $image_path_alt;
 			}
 		}
 
 		else
 		{
+			comk_add_error (__("Could not get user data", "communikit"));
 			$image_path = $image_path_alt;
 		}
 
@@ -101,7 +103,17 @@
 	function comku_get_user_page_slug ()
 	{
 		$page = get_post (get_option ("comk_page_user"));
-		return $page->post_name;
+
+		if ($page === null)
+		{
+			comk_add_error (__("Could not load the post slug", "communikit"));
+			return null;
+		}
+
+		else
+		{
+			return $page->post_name;
+		}
 	}
 
 	function comku_get_edit_page_url ()
@@ -112,7 +124,17 @@
 	function comku_get_edit_page_slug ()
 	{
 		$page = get_post (get_option ("comk_page_edit"));
-		return $page->post_name;
+
+		if ($page === null)
+		{
+			comk_add_error (__("Could not load the post slug", "communikit"));
+			return null;
+		}
+
+		else
+		{
+			return $page->post_name;
+		}
 	}
 
 	function comku_get_edit_image_url ()
@@ -182,7 +204,16 @@
 	{
 		$description = get_user_meta ($user_id, "description", true);
 
-		return ($description === false) ? "" : $description;
+		if ($description === false)
+		{
+			comk_add_error (__("Could not decode user metadata", "communikit"));
+			return __("Could not load the user description", "communikit");
+		}
+
+		else
+		{
+			return $description;
+		}
 	}
 
 	function comku_change_user_description ($user_id)

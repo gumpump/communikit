@@ -6,6 +6,13 @@
 												array_push ($categories,
 															array
 															(
+																"slug" => "comkb_category_gen",
+																"title" => "CommuniKit - General"
+															));
+
+												array_push ($categories,
+															array
+															(
 																"slug" => "comkb_category_form",
 																"title" => "CommuniKit - Form"
 															));
@@ -35,6 +42,8 @@
 
 	function comkb_add_blocks ()
 	{
+		register_block_type (__DIR__ . "/error_view");
+
 		register_block_type (__DIR__ . "/input_form");
 		register_block_type (__DIR__ . "/input_field");
 		register_block_type (__DIR__ . "/input_upload");

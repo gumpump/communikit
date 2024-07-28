@@ -29,12 +29,13 @@ img.comk-edit_icon
 
 div.comk-error_messages
 {
-	width: 50%;
+	width: 100%;
 }
 
 div.comk-error_message
 {
 	width: max-content;
+	max-width: 50%;
 	margin: 10px 0px;
 	padding: 10px;
 	font-size: 1.2rem;

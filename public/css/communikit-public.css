@@ -5,6 +5,24 @@ div.comk-outer_block
 	height: fit-content;
 }
 
+/* GENERAL-BLOCKS */
+div.comk-error_messages
+{
+	width: 100%;
+}
+
+div.comk-error_message
+{
+	width: max-content;
+	max-width: 50%;
+	margin: 10px 0px;
+	padding: 10px;
+	font-size: 1.2rem;
+	color: white;
+	background-color: red;
+	border-radius: 5px;
+}
+
 /* FORM-BLOCKS */
 div.comk-input
 {

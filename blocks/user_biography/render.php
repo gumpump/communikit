@@ -1,24 +1,13 @@
 <?php
 	$user = get_user_by ("slug", get_query_var ("user-name"));
-
-	if ($user === false)
-	{
-?>
-<div>
-	<p><?php comk_add (__("Something went wrong", "communikit")); ?></p>
-</div>
-<?php
-	}
-
-	else
-	{
-		$description = ($user === false) ? __("No description available", "communikit") : $user->user_description;
+	$user_id = ($user === false) ? false : $user->ID;
+	$description = comku_get_user_description ($user_id);
 ?>
 <div <?php get_block_wrapper_attributes (); ?>>
 	<div>
 		<span><?php print (sanitize_textarea_field ($description)); ?></span>
 		<?php
-			if ($user->ID == get_current_user_id ())
+			if ($user_id == get_current_user_id ())
 			{
 				require_once plugin_dir_path (__FILE__) . '../../includes/communikit-user.php';
 				$edit_image = comku_get_edit_image_url ();
@@ -30,6 +19,3 @@
 		?>
 	</div>
 </div>
-<?php
-}
-?>

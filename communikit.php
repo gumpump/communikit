@@ -106,8 +106,7 @@ function show_errors ()
 	<?php
 }
 
-// TODO: Change the hook, so the Gutenberg editor won't break again
-//add_action ("shutdown", "show_errors");
+add_action ("wp_footer", "show_errors");
 
 require plugin_dir_path (__FILE__) . 'includes/class-communikit.php';
 

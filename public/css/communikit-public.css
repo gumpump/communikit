@@ -14,7 +14,6 @@ div.comk-error_messages
 div.comk-error_message
 {
 	width: max-content;
-	max-width: 50%;
 	margin: 10px 0px;
 	padding: 10px;
 	font-size: 1.2rem;

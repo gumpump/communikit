@@ -1,6 +1,20 @@
 <?php
 	require_once plugin_dir_path ( __FILE__ ) . "class-communikit-error.php";
 
+	/*
+	 * This function seems like overhead, but it is used to capsulate the error handling
+	 */
+	function comku_get_user_name ($user)
+	{
+		if ($user === false)
+		{
+			comk_add_error (__("User name: Could not load username", "communikit"));
+			return __("Could not load username", "communikit");
+		}
+
+		return $user->display_name;
+	}
+
 	function comku_get_user_image_url ($user_id)
 	{
 		$usermeta = get_user_meta ($user_id, "comk_usermeta", true);
@@ -25,14 +39,14 @@
 
 			else
 			{
-				comk_add_error (__("Could not decode user metadata", "communikit"));
+				comk_add_error (__("User image: Could not decode user metadata", "communikit"));
 				$image_path = $image_path_alt;
 			}
 		}
 
 		else
 		{
-			comk_add_error (__("Could not get user data", "communikit"));
+			comk_add_error (__("User image: Could not get user data", "communikit"));
 			$image_path = $image_path_alt;
 		}
 
@@ -47,13 +61,13 @@
 
 		if (!empty ($upload["error"]))
 		{
-			comk_add_error (__("Could not upload file", "communikit"));
+			comk_add_error (__("User image: Could not upload file", "communikit"));
 			return;
 		}
 
 		if (!str_contains ($upload["type"], "/image"))
 		{
-			comk_add_error (__("Uploaded file is not an image", "communikit"));
+			comk_add_error (__("User image: Uploaded file is not an image", "communikit"));
 			return;
 		}
 
@@ -71,7 +85,7 @@
 
 		if (is_wp_error ($image_id) || $image_id === 0)
 		{
-			comk_add_error (__("Could not insert file into media library", "communikit"));
+			comk_add_error (__("User image: Could not insert file into media library", "communikit"));
 			return;
 		}
 
@@ -106,7 +120,7 @@
 
 		if ($page === null)
 		{
-			comk_add_error (__("Could not load the post slug", "communikit"));
+			comk_add_error (__("User page: Could not load the post slug", "communikit"));
 			return null;
 		}
 
@@ -127,14 +141,11 @@
 
 		if ($page === null)
 		{
-			comk_add_error (__("Could not load the post slug", "communikit"));
+			comk_add_error (__("Edit page: Could not load the post slug", "communikit"));
 			return null;
 		}
 
-		else
-		{
 			return $page->post_name;
-		}
 	}
 
 	function comku_get_edit_image_url ()
@@ -145,7 +156,14 @@
 		$image_path_alt .= "edit_default.png";
 
 		$options = json_decode (get_option ("comk_options"));
-		return (($options->edit_image_id == -1) ? $image_path_alt : wp_get_attachment_image_url ($options->edit_image_id));
+
+		if ($options->edit_image_id == -1)
+		{
+			comk_add_error (__("Edit image: Could not load custom image"));
+			return $image_path_alt;
+		}
+
+		return wp_get_attachment_image_url ($options->edit_image_id);
 	}
 
 	function comku_change_edit_image ()
@@ -156,13 +174,13 @@
 
 		if (!empty ($upload["error"]))
 		{
-			comk_add_error (__("Could not upload file", "communikit"));
+			comk_add_error (__("Edit image: Could not upload file", "communikit"));
 			return;
 		}
 
 		if (!str_contains ($upload["type"], "image/"))
 		{
-			comk_add_error (__("Uploaded file is not an image: " . $upload["type"], "communikit"));
+			comk_add_error (__("Edit image: Uploaded file is not an image: " . $upload["type"], "communikit"));
 			return;
 		}
 
@@ -178,7 +196,7 @@
 
 		if (is_wp_error ($image_id) || $image_id === 0)
 		{
-			comk_add_error (__("Could not insert file into media library", "communikit"));
+			comk_add_error (__("Edit image: Could not insert file into media library", "communikit"));
 			return;
 		}
 
@@ -206,7 +224,7 @@
 
 		if ($description === false)
 		{
-			comk_add_error (__("Could not decode user metadata", "communikit"));
+			comk_add_error (__("User description: Could not decode user metadata", "communikit"));
 			return __("Could not load the user description", "communikit");
 		}
 

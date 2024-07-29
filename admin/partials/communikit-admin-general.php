@@ -1,21 +1,22 @@
 <?php
 	require_once plugin_dir_path (__FILE__) . "../../includes/class-communikit-error.php";
 
-	$pages = get_pages ();
-	$page_user_id = get_option ("comk_page_user");
-	$page_edit_id = get_option ("comk_page_edit");
-	$edit_image = comku_get_edit_image_url ();
-
 	if (isset ($_REQUEST["submit"]))
 	{
 		update_option ("comk_page_user", ((isset ($_REQUEST["comka-user_page"])) ? $_REQUEST["comka-user_page"] : $page_user_id));
 		update_option ("comk_page_edit", ((isset ($_REQUEST["comka-edit_page"])) ? $_REQUEST["comka-edit_page"] : $page_edit_id));
-
+		update_option ("comk_debug", (isset ($_REQUEST["comka-debug"]) ? "on" : "off"));
 		if (isset ($_FILES["comka-edit_icon"]) and $_FILES["comka-edit_icon"]["size"] > 0)
 		{
 			comku_change_edit_image ();
 		}
 	}
+
+	$pages = get_pages ();
+	$page_user_id = get_option ("comk_page_user");
+	$page_edit_id = get_option ("comk_page_edit");
+	$edit_image = comku_get_edit_image_url ();
+	$debug = get_option ("comk_debug");
 
 	/*
 	 * The following HTML code only shows when the associated tab is active
@@ -65,6 +66,14 @@
 					<div>
 						<input type="button"
 					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<label for="comka-debug"><?php print (__("Debug mode", "communikit")); ?></label>
+				</th>
+				<td>
+					<input type="checkbox" id="comka-debug" name="comka-debug" value="on" <?php echo ($debug == "on") ? "checked" : ""; ?>/>
 				</td>
 			</tr>
 			<tr>

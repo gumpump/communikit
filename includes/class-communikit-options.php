@@ -6,11 +6,13 @@
 		);
 		public static function set_options ()
 		{
+			add_option ("comk_debug", "off");
 			add_option ("comk_options", json_encode (Communikit_Options::$template_options));
 		}
 
 		public static function unset_options ()
 		{
 			delete_option ("comk_options");
+			delete_option ("comk_debug");
 		}
 	}

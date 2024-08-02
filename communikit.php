@@ -13,7 +13,7 @@
  * Version:           0.5.1
  * Author:            Wolfgang Neue
  * Author URI:        https://communikit.de/
- * License:           GPL-2.0+
+ * License:           MIT
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       communikit
  * Domain Path:       /languages

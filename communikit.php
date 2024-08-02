@@ -10,7 +10,7 @@
  * Plugin Name:       CommuniKit
  * Plugin URI:        https://communikit.de
  * Description:       Bla
- * Version:           0.1.0
+ * Version:           0.5.1
  * Author:            Wolfgang Neue
  * Author URI:        https://communikit.de/
  * License:           GPL-2.0+
@@ -24,7 +24,9 @@ if (!defined ('WPINC'))
 	die;
 }
 
-define ("COMMUNIKIT_VERSION", "0.1.0");
+define ("COMMUNIKIT_VERSION", "0.5.1");
+
+require_once plugin_dir_path (__FILE__) . "includes/class-communikit-options.php";
 
 function activate_communikit ()
 {
@@ -84,6 +86,31 @@ function session_init ()
 
 add_action ("init", "session_init");
 
+function change_admin_img ()
+{
+	if (comk_get_option ("admin_img") == "on")
+	{
+		$image_url = comku_get_user_image_url (get_current_user_id ());
+
+		?>
+			<script>
+				var user_image_url = "<?php echo $image_url; ?>";
+
+				var images = document.getElementsByClassName ("avatar");
+
+				for (var i of images)
+				{
+					i.setAttribute ("src", user_image_url);
+				}
+			</script>
+		<?php
+	}
+}
+
+add_action ("wp_after_admin_bar_render", "change_admin_img");
+
+require_once plugin_dir_path (__FILE__) . "includes/class-communikit-options.php";
+
 function show_errors ()
 {
 	?>
@@ -106,7 +133,7 @@ function show_errors ()
 	<?php
 }
 
-if (get_option ("comk_debug") == "on")
+if (comk_get_option ("debug") == "on")
 {
 	add_action ("wp_footer", "show_errors");
 }

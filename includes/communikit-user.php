@@ -155,15 +155,15 @@
 		$image_path_alt .= "/wp-content/plugins/communikit/public/images/";
 		$image_path_alt .= "edit_default.png";
 
-		$options = json_decode (get_option ("comk_options"));
+		$option = comk_get_option ("edit_image_id");
 
-		if ($options->edit_image_id == -1)
+		if ($option == -1)
 		{
 			comk_add_error (__("Edit image: Could not load custom image"));
 			return $image_path_alt;
 		}
 
-		return wp_get_attachment_image_url ($options->edit_image_id);
+		return wp_get_attachment_image_url ($option);
 	}
 
 	function comku_change_edit_image ()
@@ -206,16 +206,14 @@
 										wp_generate_attachment_metadata (	$image_id,
 																			$upload["file"]));
 
-		$options = json_decode (get_option ("comk_options"));
+		$option = comk_get_option ("edit_image_id");
 
-		if ($options->edit_image_id != null)
+		if ($option != null)
 		{
-			wp_delete_attachment ((int)$options->edit_image_id);
+			wp_delete_attachment ((int)$option);
 		}
 
-		$options = [];
-		$options["edit_image_id"] = $image_id;
-		update_option ("comk_options", json_encode ($options));
+		comk_update_option ("edit_image_id", $image_id);
 	}
 
 	function comku_get_user_description ($user_id)

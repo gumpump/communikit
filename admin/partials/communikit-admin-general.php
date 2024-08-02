@@ -1,22 +1,32 @@
 <?php
 	require_once plugin_dir_path (__FILE__) . "../../includes/class-communikit-error.php";
+	require_once plugin_dir_path (__FILE__) . "../../includes/class-communikit-options.php";
 
 	if (isset ($_REQUEST["submit"]))
 	{
 		update_option ("comk_page_user", ((isset ($_REQUEST["comka-user_page"])) ? $_REQUEST["comka-user_page"] : $page_user_id));
 		update_option ("comk_page_edit", ((isset ($_REQUEST["comka-edit_page"])) ? $_REQUEST["comka-edit_page"] : $page_edit_id));
-		update_option ("comk_debug", (isset ($_REQUEST["comka-debug"]) ? "on" : "off"));
+		comk_update_option ("admin_img", (isset ($_REQUEST["comka-admin_img"]) ? "on" : "off"));
+		comk_update_option ("debug", (isset ($_REQUEST["comka-debug"]) ? "on" : "off"));
 		if (isset ($_FILES["comka-edit_icon"]) and $_FILES["comka-edit_icon"]["size"] > 0)
 		{
 			comku_change_edit_image ();
 		}
+
+		Communikit_Options::save_options ();
 	}
 
 	$pages = get_pages ();
 	$page_user_id = get_option ("comk_page_user");
 	$page_edit_id = get_option ("comk_page_edit");
 	$edit_image = comku_get_edit_image_url ();
-	$debug = get_option ("comk_debug");
+	$admin_img = comk_get_option ("admin_img");
+	$debug = comk_get_option ("debug");
+
+	$desc_admin_img	=	"Replace the profile picture from Gravatar shown in your admin bar"
+						. " with the one you chose in CommuniKit.";
+	$desc_debug		=	"All kinds of error messages will be shown in this options page"
+						. " and wherever you placed a error viewer block.";
 
 	/*
 	 * The following HTML code only shows when the associated tab is active
@@ -61,19 +71,27 @@
 				<td>
 					<div>
 						<img class="comk-edit_icon" src="<?php print ($edit_image); ?>" />
-						<input type="file" id="comka-edit_icon" name="comka-edit_icon" accept="image/*" />
-					</div>
-					<div>
-						<input type="button"
+						<div><input type="file" id="comka-edit_icon" name="comka-edit_icon" accept="image/*" /></div>
+						<!--<input type="button" id="comka-edit_icon_reset" name="comka-edit_icon_reset" value="<?php echo __("Reset icon", "communikit"); ?>"/>-->
 					</div>
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">
-					<label for="comka-debug"><?php print (__("Debug mode", "communikit")); ?></label>
+					<label for="comka-admin_img"><?php print (__("Show profile picture on admin page", "communikit")); ?></label>
+				</th>
+				<td>
+					<input type="checkbox" id="comka-admin_img" name="comka-admin_img" value="on" <?php echo ($admin_img == "on") ? "checked" : ""; ?>/>
+					<p class="description"><?php echo __($desc_admin_img, "communikit")?></p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<label for="comka-debug"><?php echo __("Debug mode", "communikit"); ?></label>
 				</th>
 				<td>
 					<input type="checkbox" id="comka-debug" name="comka-debug" value="on" <?php echo ($debug == "on") ? "checked" : ""; ?>/>
+					<p class="description"><?php echo __($desc_debug, "communikit")?></p>
 				</td>
 			</tr>
 			<tr>

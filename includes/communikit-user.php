@@ -65,7 +65,7 @@
 			return;
 		}
 
-		if (!str_contains ($upload["type"], "/image"))
+		if (!str_contains ($upload["type"], "image/"))
 		{
 			comk_add_error (__("User image: Uploaded file is not an image", "communikit"));
 			return;

@@ -6,3 +6,9 @@ At first, I only began building my own blocks, which was, in fact, one of the ha
 
 The plugin as it exists today is the result of all the ideas I've had while creating it.
 After each step, I think about the next. There's no roadmap yet.
+
+## Things I want to add in the future
++ I want every Gutenberg block in this plugin to be as customizable as possible
+
+## Structure
+![Image](./connections.png "Connections between files")

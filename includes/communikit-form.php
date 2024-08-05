@@ -1,5 +1,6 @@
 <?php
 	require_once plugin_dir_path ( __FILE__ ) . "class-communikit-error.php";
+	require_once plugin_dir_path (__FILE__) . "communikit-user.php";
 	
 	function comk_form_handler ($type)
 	{
@@ -109,7 +110,6 @@
 
 				if (!empty ($_FILES["comki-upload"]))
 				{
-					require_once plugin_dir_path (__FILE__) . "communikit-user.php";
 					comku_change_user_image ($user_id);
 				}
 
@@ -122,7 +122,6 @@
 
 				if (!empty ($_FILES["comki-upload"]))
 				{
-					require_once plugin_dir_path (__FILE__) . "communikit-user.php";
 					comku_change_user_image ($user_id);
 				}
 
@@ -139,7 +138,6 @@
 
 				$user_id = get_current_user_id ();
 
-				require_once plugin_dir_path (__FILE__) . "communikit-user.php";
 				comku_change_user_description ($user_id);
 
 				break;

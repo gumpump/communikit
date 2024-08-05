@@ -9,12 +9,12 @@
  * @wordpress-plugin
  * Plugin Name:       CommuniKit
  * Plugin URI:        https://communikit.de
- * Description:       Bla
+ * Description:       Let your users log in and control their profiles without access to the admin pages
  * Version:           0.5.1
  * Author:            Wolfgang Neue
  * Author URI:        https://communikit.de/
  * License:           MIT
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI:       https://www.mit.edu/~amini/LICENSE.md
  * Text Domain:       communikit
  * Domain Path:       /languages
  */
@@ -108,8 +108,6 @@ function change_admin_img ()
 }
 
 add_action ("wp_after_admin_bar_render", "change_admin_img");
-
-require_once plugin_dir_path (__FILE__) . "includes/class-communikit-options.php";
 
 function show_errors ()
 {

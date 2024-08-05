@@ -2,7 +2,7 @@
 	/*
 		In the future this file will contain all roles and capabilities
 		required by CommuniKit. This will help integrating the users
-		created by CommuniKit-forms into the WordPress world.
+		created by CommuniKit-forms into the WordPress-world.
 	*/
 
 	class Communikit_Capabilities

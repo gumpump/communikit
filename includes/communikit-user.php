@@ -15,13 +15,18 @@
 		return $user->display_name;
 	}
 
-	function comku_get_user_image_url ($user_id)
+	function comku_get_user_image_fallback () : string
 	{
-		$usermeta = get_user_meta ($user_id, "comk_usermeta", true);
-
 		$image_path_alt = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"];
 		$image_path_alt .= "/wp-content/plugins/communikit/public/images/";
 		$image_path_alt .= "profile_default.png";
+
+		return $image_path_alt;
+	}
+
+	function comku_get_user_image_url ($user_id)
+	{
+		$usermeta = get_user_meta ($user_id, "comk_usermeta", true);
 
 		if (is_string ($usermeta) && !empty ($usermeta))
 		{
@@ -33,21 +38,21 @@
 
 				if ($image_path === false)
 				{
-					$image_path = $image_path_alt;
+					$image_path = comku_get_user_image_fallback ();
 				}
 			}
 
 			else
 			{
 				comk_add_error (__("User image: Could not decode user metadata", "communikit"));
-				$image_path = $image_path_alt;
+				$image_path = comku_get_user_image_fallback ();
 			}
 		}
 
 		else
 		{
 			comk_add_error (__("User image: Could not get user data", "communikit"));
-			$image_path = $image_path_alt;
+			$image_path = comku_get_user_image_fallback ();
 		}
 
 		return $image_path;
@@ -148,19 +153,23 @@
 			return $page->post_name;
 	}
 
-	function comku_get_edit_image_url ()
+	function comku_get_edit_image_fallback () : string
 	{
-		// Prepare 
 		$image_path_alt = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"];
 		$image_path_alt .= "/wp-content/plugins/communikit/public/images/";
 		$image_path_alt .= "edit_default.png";
 
+		return $image_path_alt;
+	}
+
+	function comku_get_edit_image_url ()
+	{
 		$option = comk_get_option ("edit_image_id");
 
 		if ($option == -1)
 		{
 			comk_add_error (__("Edit image: Could not load custom image"));
-			return $image_path_alt;
+			return comku_get_edit_image_fallback ();
 		}
 
 		return wp_get_attachment_image_url ($option);

@@ -14,7 +14,7 @@
 						<figcaption><?php print (__("Current", "communikit")); ?></figcaption>
 					</figure>
 					<figure class="comk-box_edit_figure">
-						<img id="comk-box_edit_image_preview_target" class="comk-box_edit_image_preview" src="<?php print (comku_get_user_image_url (0)); ?>" />
+						<img id="comk-box_edit_image_preview_target" class="comk-box_edit_image_preview" src="<?php print (comku_get_user_image_fallback ()); ?>" />
 						<figcaption><?php print (__("Upcoming", "communikit")); ?></figcaption>
 					</figure>
 				</div>

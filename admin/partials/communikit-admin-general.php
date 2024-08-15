@@ -13,7 +13,7 @@
 			comku_change_edit_image ();
 		}
 
-		Communikit_Options::save_options ();
+		CommuniKit_Options::save_options ();
 	}
 
 	$pages = get_pages ();

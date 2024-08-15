@@ -1,5 +1,5 @@
 <?php
-	class Communikit_Options
+	class CommuniKit_Options
 	{
 		private static $template_options = array (
 			"edit_image_id" => -1,
@@ -52,10 +52,10 @@
 
 	function comk_get_option ($option)
 	{
-		return Communikit_Options::get_option ($option);
+		return CommuniKit_Options::get_option ($option);
 	}
 
 	function comk_update_option (string $option, $value)
 	{
-		Communikit_Options::update_option ($option, $value);
+		CommuniKit_Options::update_option ($option, $value);
 	}

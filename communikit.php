@@ -4,7 +4,7 @@
  *
  * @link              https://communikit.de
  * @since             0.1.0
- * @package           Communikit
+ * @package           CommuniKit
  *
  * @wordpress-plugin
  * Plugin Name:       CommuniKit
@@ -31,13 +31,13 @@ require_once plugin_dir_path (__FILE__) . "includes/class-communikit-options.php
 function activate_communikit ()
 {
 	require_once plugin_dir_path (__FILE__) . 'includes/class-communikit-activator.php';
-	Communikit_Activator::activate ();
+	CommuniKit_Activator::activate ();
 }
 
 function deactivate_communikit ()
 {
 	require_once plugin_dir_path (__FILE__) . 'includes/class-communikit-deactivator.php';
-	Communikit_Deactivator::deactivate ();
+	CommuniKit_Deactivator::deactivate ();
 }
 
 register_activation_hook (__FILE__, 'activate_communikit');
@@ -140,7 +140,7 @@ require plugin_dir_path (__FILE__) . 'includes/class-communikit.php';
 
 function run_communikit ()
 {
-	$plugin = new Communikit ();
+	$plugin = new CommuniKit ();
 	$plugin->run ();
 }
 

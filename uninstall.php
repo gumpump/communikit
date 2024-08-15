@@ -22,7 +22,7 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
+ * @package    CommuniKit
  */
 
 // If uninstall not called from WordPress, then exit.

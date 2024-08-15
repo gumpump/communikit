@@ -1,7 +1,7 @@
 <?php
 	require_once ABSPATH . "wp-admin/includes/post.php";
 
-	class Communikit_Pages
+	class CommuniKit_Pages
 	{
 		public static function add_pages ()
 		{

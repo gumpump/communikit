@@ -8,8 +8,8 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
- * @subpackage Communikit/admin/partials
+ * @package    CommuniKit
+ * @subpackage CommuniKit/admin/partials
  */
 
 $default_tab = null;

@@ -6,8 +6,8 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  * @author     Wolfgang Neue <info@communikit.de>
  */
-class Communikit_Loader {
+class CommuniKit_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

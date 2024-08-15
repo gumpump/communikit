@@ -6,8 +6,8 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  * @author     Wolfgang Neue <info@communikit.de>
  */
-class Communikit_Deactivator
+class CommuniKit_Deactivator
 {
 	/**
 	 * Short Description. (use period)
@@ -32,12 +32,12 @@ class Communikit_Deactivator
 	public static function deactivate ()
 	{
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-options.php";
-		Communikit_Options::unset_options ();
+		CommuniKit_Options::unset_options ();
 
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-pages.php";
-		Communikit_Pages::remove_pages ();
+		CommuniKit_Pages::remove_pages ();
 
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-capabilities.php";
-		Communikit_Capabilities::unset_roles ();
+		CommuniKit_Capabilities::unset_roles ();
 	}
 }

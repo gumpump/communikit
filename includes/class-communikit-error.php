@@ -1,5 +1,12 @@
 <?php
-	class Communikit_Error
+	enum CommuniKit_Error_Type
+	{
+		case Error;
+		case Warning;
+		case Info;
+	}
+
+	class CommuniKit_Error
 	{
 		private static $messages = array ();
 		public static function add_message (string $message)
@@ -28,15 +35,15 @@
 
 	function comk_add_error ($error)
 	{
-		Communikit_Error::add_message ($error);
+		CommuniKit_Error::add_message ($error);
 	}
 
 	function comk_get_errors ()
 	{
-		return Communikit_Error::get_messages ();
+		return CommuniKit_Error::get_messages ();
 	}
 
 	function comk_error_count ()
 	{
-		return Communikit_Error::count ();
+		return CommuniKit_Error::count ();
 	}

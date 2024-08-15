@@ -6,8 +6,8 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
- * @subpackage Communikit/admin
+ * @package    CommuniKit
+ * @subpackage CommuniKit/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Communikit
- * @subpackage Communikit/admin
+ * @package    CommuniKit
+ * @subpackage CommuniKit/admin
  * @author     Wolfgang Neue <info@communikit.de>
  */
-class Communikit_Admin
+class CommuniKit_Admin
 {
 
 	/**
@@ -90,10 +90,10 @@ class Communikit_Admin
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Communikit_Loader as all of the hooks are defined
+		 * defined in CommuniKit_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Communikit_Loader will then create the relationship
+		 * The CommuniKit_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -113,10 +113,10 @@ class Communikit_Admin
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Communikit_Loader as all of the hooks are defined
+		 * defined in CommuniKit_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Communikit_Loader will then create the relationship
+		 * The CommuniKit_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */

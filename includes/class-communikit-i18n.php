@@ -9,8 +9,8 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  * @author     Wolfgang Neue <info@communikit.de>
  */
-class Communikit_i18n
+class CommuniKit_i18n
 {
 	/**
 	 * Load the plugin text domain for translation.

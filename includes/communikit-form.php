@@ -216,6 +216,7 @@
 			$value = "";
 
 			// I should optimize this
+			// TODO: Optimize the search for fields to fill
 			if (str_contains ($sub, "email"))
 			{
 				$value = $userdata->user_email;

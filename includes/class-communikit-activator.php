@@ -6,8 +6,8 @@
  * @link       https://communikit.de
  * @since      1.0.0
  *
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  */
 
 /**
@@ -16,21 +16,21 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Communikit
- * @subpackage Communikit/includes
+ * @package    CommuniKit
+ * @subpackage CommuniKit/includes
  * @author     Wolfgang Neue <info@communikit.de>
  */
-class Communikit_Activator
+class CommuniKit_Activator
 {
     public static function activate ()
     {
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-capabilities.php";
-		Communikit_Capabilities::set_roles ();
+		CommuniKit_Capabilities::set_roles ();
 
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-pages.php";
-		Communikit_Pages::add_pages ();
+		CommuniKit_Pages::add_pages ();
 
 		require_once plugin_dir_path (dirname (__FILE__)) . "includes/class-communikit-options.php";
-		Communikit_Options::set_options ();
+		CommuniKit_Options::set_options ();
 	}
 }

@@ -5,7 +5,7 @@
 		created by CommuniKit-forms into the WordPress-world.
 	*/
 
-	class Communikit_Capabilities
+	class CommuniKit_Capabilities
 	{
 		public static function set_roles ()
 		{

@@ -121,9 +121,24 @@ function show_errors ()
 			{
 				for (m in messages)
 				{
+					var icon = "";
+					switch (messages[m]["type"])
+					{
+						case 'E':
+							icon = "\u2716";
+							break;
+						case 'W':
+							icon = "\u26A0";
+							break;
+						case 'I':
+							icon = "\u2755";
+							break;
+					}
+
 					const message = document.createElement ("div");
 					message.classList.add ("comk-error_message");
-					message.appendChild (document.createTextNode (messages[m]));
+					message.classList.add ("comk-error_message_" + messages[m]["type"]);
+					message.appendChild (document.createTextNode (icon + " " + messages[m]["message"]));
 					elements[k].appendChild (message);
 				}
 			}

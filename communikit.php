@@ -109,6 +109,9 @@ function change_admin_img ()
 
 add_action ("wp_after_admin_bar_render", "change_admin_img");
 
+// TODO: Add script for replacing images in user list
+// Look up "manage_users_custom_column"
+
 function show_errors ()
 {
 	?>

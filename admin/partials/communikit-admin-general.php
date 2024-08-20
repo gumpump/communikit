@@ -8,6 +8,12 @@
 		update_option ("comk_page_edit", ((isset ($_REQUEST["comka-edit_page"])) ? $_REQUEST["comka-edit_page"] : $page_edit_id));
 		comk_update_option ("admin_img", (isset ($_REQUEST["comka-admin_img"]) ? "on" : "off"));
 		comk_update_option ("debug", (isset ($_REQUEST["comka-debug"]) ? "on" : "off"));
+
+		if (isset ($_REQUEST["comka-edit_image_reset"]) and $_REQUEST["comka-edit_image_reset"] == 1)
+		{
+			comku_reset_edit_image ();
+		}
+
 		if (isset ($_FILES["comka-edit_icon"]) and $_FILES["comka-edit_icon"]["size"] > 0)
 		{
 			comku_change_edit_image ();
@@ -25,7 +31,7 @@
 
 	$desc_admin_img	=	"Replace the profile picture from Gravatar shown in your admin bar"
 						. " with the one you chose in CommuniKit.";
-	$desc_debug		=	"All kinds of error messages will be shown in this options page"
+	$desc_debug		=	"All kinds of messages will be shown in this options page"
 						. " and wherever you placed a error viewer block.";
 
 	/*
@@ -33,7 +39,7 @@
 	*/
 ?>
 <div class="comk-error_messages"></div>
-<form method="post" action="?page=comka_settings" enctype="multipart/form-data">
+<form id="comka-options_general_form" method="post" action="?page=comka_settings" enctype="multipart/form-data">
 	<table class="form-table" role="presentation">
 		<tbody>
 			<tr>
@@ -70,9 +76,12 @@
 				</th>
 				<td>
 					<div>
-						<img class="comk-edit_icon" src="<?php print ($edit_image); ?>" />
-						<div><input type="file" id="comka-edit_icon" name="comka-edit_icon" accept="image/*" /></div>
-						<!--<input type="button" id="comka-edit_icon_reset" name="comka-edit_icon_reset" value="<?php echo __("Reset icon", "communikit"); ?>"/>-->
+						<img class="comk-edit_icon" id="comka-edit_icon_image" src="<?php print ($edit_image); ?>" />
+						<div>
+							<input class="comk-option_button" type="file" id="comka-edit_icon" name="comka-edit_icon" accept="image/*" />
+							<input class="comk-option_button" type="button" onclick="Reset ()" id="comka-edit_icon_reset" name="comka-edit_icon_reset" value="<?php echo __("Reset icon", "communikit"); ?>"/>
+							<span id="comka-edit_icon_reset_warning" style="display: none;"><?php echo __("Don't forget to save your changes after resetting", "communikit") ?></span>
+						</div>
 					</div>
 				</td>
 			</tr>
@@ -103,3 +112,17 @@
 	</table>
 	<input type="hidden" name="tab" value="general" />
 </form>
+<script>
+	function Reset ()
+	{
+		const form = document.getElementById ("comka-options_general_form");
+		const Input = document.createElement ("input");
+		Input.type = "hidden";
+		Input.name = "comka-edit_image_reset";
+		Input.value = "1";
+		form.appendChild (Input);
+		document.getElementById("comka-edit_icon_image").src = "<?php echo comku_get_edit_image_fallback (); ?>";
+		document.getElementById("comka-edit_icon").value = "";
+		document.getElementById("comka-edit_icon_reset_warning").style.display = "unset";
+	}
+</script>

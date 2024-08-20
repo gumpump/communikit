@@ -225,6 +225,18 @@
 		comk_update_option ("edit_image_id", $image_id);
 	}
 
+	function comku_reset_edit_image ()
+	{
+		$option = comk_get_option ("edit_image_id");
+
+		if ($option != null and $option != -1)
+		{
+			wp_delete_attachment ((int)$option);
+		}
+
+		comk_update_option ("edit_image_id", -1);
+	}
+
 	function comku_get_user_description ($user_id)
 	{
 		$description = get_user_meta ($user_id, "description", true);

@@ -1,17 +1,4 @@
 <?php
-
-/**
- * Provide a admin area view for the plugin
- *
- * This file is used to markup the admin-facing aspects of the plugin.
- *
- * @link       https://communikit.de
- * @since      1.0.0
- *
- * @package    CommuniKit
- * @subpackage CommuniKit/admin/partials
- */
-
 $default_tab = null;
 $tab = isset ($_REQUEST['tab']) ? $_REQUEST['tab'] : $default_tab;
 $page_title = esc_html (get_admin_page_title ());

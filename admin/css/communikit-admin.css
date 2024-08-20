@@ -1,21 +1,10 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
-
 @font-face
 {
 	font-family: Comfortaa-admin;
 	src: url("../fonts/Comfortaa.ttf");
 }
 
-:root
-{
-	--comk_border: #2271b1;
-	--comk_button: #f6f7f7;
-	--comk_profile-image: url ("../../public/images/profile_default.png");
-}
-
+/* COMMON */
 .comk_common
 {
 	font-family: Comfortaa-admin;
@@ -23,10 +12,17 @@
 
 img.comk-edit_icon
 {
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 }
 
+/* OPTIONS */
+input.comk-option_button
+{
+	display: block;
+}
+
+/* MESSAGES */
 div.comk-error_messages
 {
 	width: 100%;

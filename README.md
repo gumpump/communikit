@@ -8,7 +8,7 @@ The plugin as it exists today is the result of all the ideas I've had while crea
 After each step, I think about the next. There's no roadmap yet.
 
 ## Things I want to add in the future
-+ I want every Gutenberg block in this plugin to be as customizable as possible
++ I want every Gutenberg block in this plugin to be as customizable as possible (I am currently working on this)
 
 ## Structure
 ![Image](./connections.png "Connections between files")

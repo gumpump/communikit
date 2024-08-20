@@ -17,7 +17,21 @@
   "icon": "format-image",
   "example": {},
   "supports": {
-    "html": false
+    "html": false,
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "color": {
+      "background": true,
+      "gradients": true,
+      "text": false
+    },
+    "shadow": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
   },
   "attributes": {
     "rounded": {

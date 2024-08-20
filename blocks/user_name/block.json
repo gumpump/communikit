@@ -16,7 +16,38 @@
   "icon": "nametag",
   "example": {},
   "supports": {
-    "html": false
+    "html": false,
+    "color": {
+      "background": true,
+      "gradients": true,
+      "text": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "__experimentalFontFamily": true,
+      "__experimentalTextDecoration": true,
+      "__experimentalFontStyle": true,
+      "__experimentalFontWeight": true,
+      "__experimentalLetterSpacing": true,
+      "__experimentalTextTransform": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "shadow": true
+  },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "margin": 0,
+          "padding": 0
+        }
+      }
+    }
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css"

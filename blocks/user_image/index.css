@@ -1,1 +1,1 @@
-.wp-block-communikit-user-image{height:100px;width:100px}img.comkgb-image{content:url(images/profile_default.cc381cd4.png);height:100%;width:100%}img.comkgb-image-rounded{border-radius:50%}
+.wp-block-communikit-user-image{display:flex;height:100px;width:100px}img.comkgb-user_image{content:url(images/profile_default.cc381cd4.png);height:100%;width:100%}img.comkgb-user_image_rounded{border-radius:50%}

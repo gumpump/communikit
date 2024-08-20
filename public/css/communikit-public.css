@@ -5,7 +5,7 @@ div.comk-outer_block
 	height: fit-content;
 }
 
-/* GENERAL-BLOCKS */
+/* MESSAGES */
 div.comk-error_messages
 {
 	width: 100%;
@@ -146,18 +146,20 @@ img.comk-user_edit_img
 	vertical-align: top;
 }
 
-img.comk-user_img
+div.comk-user_img_box
 {
+	display: flex;
 	width: 100px;
 	height: 100px;
+}
+
+img.comk-user_img
+{
+	width: 100%;
+	height: 100%;
 }
 
 img.comk-user_img_rounded
 {
 	border-radius: 50%;
-}
-
-h2.comk-user_name
-{
-	display: contents;
 }

@@ -3,8 +3,7 @@
 	$username = comku_get_user_name ($user);
 	$user_id = ($user === false) ? false : $user->ID;
 ?>
-<div>
-<h2 class="comk-user_name"><?php print ($username); ?></h2>
+<h2 <?php echo get_block_wrapper_attributes (); ?>><?php echo $username; ?></h2>
 	<?php
 		if ($user_id == get_current_user_id ())
 		{
@@ -16,4 +15,3 @@
 	<?php
 		}
 	?>
-</div>

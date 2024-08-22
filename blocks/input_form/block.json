@@ -47,7 +47,8 @@
   },
   "attributes": {
     "form_type": {
-      "type": "string"
+      "type": "string",
+      "default": "sign_in"
     },
     "forwarding": {
       "type": "boolean"

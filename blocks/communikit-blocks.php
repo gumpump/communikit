@@ -49,6 +49,7 @@
 		register_block_type (__DIR__ . "/input_form");
 		register_block_type (__DIR__ . "/input_field");
 		register_block_type (__DIR__ . "/input_upload");
+		register_block_type (__DIR__ . "/input_button");
 
 		// Blocks for displaying user informations
 		register_block_type (__DIR__ . "/user_image");

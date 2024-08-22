@@ -10,6 +10,7 @@
 			{
 				if (is_user_logged_in ())
 				{
+					comk_add_error (__("User already logged in", "communikit"), CommuniKit_Error_Type::Info);
                     return;
 				}
 

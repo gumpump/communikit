@@ -1,36 +1,35 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "communikit/input-field",
-  "title": "CommuniKit - Input - Field",
+  "name": "communikit/input-button",
+  "title": "CommuniKit - Input - Button",
   "ancestor": [
     "communikit/input-form"
   ],
   "category": "comkb_category_form",
-  "description": "Input field for use in CommuniKit-forms",
+  "description": "Input button for use in CommuniKit-forms",
   "render": "file:./render.php",
   "keywords": [
     "form",
-    "login",
-    "user",
-    "password",
-    "name",
-    "field"
+    "button",
+    "submit",
+    "reset"
   ],
   "textdomain": "communikit",
   "version": "0.1.0",
-  "icon": "admin-generic",
+  "icon": "button",
   "example": {},
   "supports": {
     "html": false
   },
   "attributes": {
-    "required": {
-      "type": "boolean"
-    },
-    "field_type": {
+    "button_type": {
       "type": "string",
-      "default": "{\"label\":\"Undefined input\",\"ident\":\"undefined\",\"type\":\"text\"}"
+      "default": "submit"
+    },
+    "button_label": {
+      "type": "string",
+      "default": "Button"
     }
   },
   "editorScript": "file:./index.js",

@@ -5,6 +5,6 @@
 	$field_required = (isset ($attributes["required"])) ? $attributes["required"] : false;
 ?>
 <div class="comk-input">
-	<input type="<?=$field_strings->type?>" id="<?=$field_name?>" name="<?=$field_name?>" value="" placeholder="" autocomplete="off" <?php if ($field_required) { print (__("required", "communikit")); } ?> />
-	<label for="<?=$field_name?>" class="comk-input_label"><?=$field_strings->label?></label>
+	<input type="<?php echo $field_strings->type; ?>" id="<?php echo $field_name; ?>" name="<?php echo $field_name; ?>" value="" placeholder="" autocomplete="off" <?php if ($field_required) { print (__("required", "communikit")); } ?> />
+	<label for="<?php echo $field_name; ?>" class="comk-input_label"><?php echo $field_strings->label; ?></label>
 </div>

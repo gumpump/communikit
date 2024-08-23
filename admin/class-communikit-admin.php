@@ -30,8 +30,8 @@ class CommuniKit_Admin
 	public function menu ()
 	{
 		add_submenu_page (	"users.php",
-							__("CommuniKit - Options", "communikit"),
-							__("CommuniKit", "communikit"),
+							"CommuniKit - " . __("Options", "communikit"),
+							"CommuniKit",
 							"manage_options",
 							sanitize_key ("comka_settings"),
 							array ($this, "menu_load"));

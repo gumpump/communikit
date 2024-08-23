@@ -29,10 +29,10 @@
 	$admin_img = comk_get_option ("admin_img");
 	$debug = comk_get_option ("debug");
 
-	$desc_admin_img	=	"Replace the profile picture from Gravatar shown in your admin bar"
-						. " with the one you chose in CommuniKit.";
-	$desc_debug		=	"All kinds of messages will be shown in this options page"
-						. " and wherever you placed a error viewer block.";
+	$desc_admin_img	=	__(	"Replace the profile picture from Gravatar shown in your admin bar"
+							. " with the one you chose in CommuniKit.", "communikit");
+	$desc_debug		=	__(	"All kinds of messages will be shown in this options page"
+							. " and wherever you placed a error viewer block.", "communikit");
 
 	/*
 	 * The following HTML code only shows when the associated tab is active
@@ -91,7 +91,7 @@
 				</th>
 				<td>
 					<input type="checkbox" id="comka-admin_img" name="comka-admin_img" value="on" <?php echo ($admin_img == "on") ? "checked" : ""; ?>/>
-					<p class="description"><?php echo __($desc_admin_img, "communikit")?></p>
+					<p class="description"><?php echo $desc_admin_img; ?></p>
 				</td>
 			</tr>
 			<tr>
@@ -100,7 +100,7 @@
 				</th>
 				<td>
 					<input type="checkbox" id="comka-debug" name="comka-debug" value="on" <?php echo ($debug == "on") ? "checked" : ""; ?>/>
-					<p class="description"><?php echo __($desc_debug, "communikit")?></p>
+					<p class="description"><?php echo $desc_debug; ?></p>
 				</td>
 			</tr>
 			<tr>

@@ -168,7 +168,7 @@
 
 		if ($option == -1)
 		{
-			comk_add_error (__("Edit image: Could not load custom image"), CommuniKit_Error_Type::Warning);
+			comk_add_error (__("Edit image: Could not load custom image", "communikit"), CommuniKit_Error_Type::Warning);
 			return comku_get_edit_image_fallback ();
 		}
 

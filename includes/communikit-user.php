@@ -4,7 +4,7 @@
 	/*
 	 * This function seems like overhead, but it is used to capsulate the error handling
 	 */
-	function comku_get_user_name ($user)
+	function comku_get_user_name ($user) : string
 	{
 		if ($user === false)
 		{
@@ -24,7 +24,7 @@
 		return $image_path_alt;
 	}
 
-	function comku_get_user_image_url ($user_id)
+	function comku_get_user_image_url ($user_id) : string
 	{
 		$usermeta = get_user_meta ($user_id, "comk_usermeta", true);
 
@@ -162,7 +162,7 @@
 		return $image_path_alt;
 	}
 
-	function comku_get_edit_image_url ()
+	function comku_get_edit_image_url () : string
 	{
 		$option = comk_get_option ("edit_image_id");
 
@@ -197,7 +197,7 @@
 											(
 												"guid" => $upload["url"],
 												"post_mime_type" => $upload["type"],
-												"post_title" => __("Edit-icon ", "communikit"),
+												"post_title" => __("Edit-icon", "communikit"),
 												"post_content" => __("Icon to show next to editable objects", "communikit"),
 												"post_status" => "inherit"
 											),
@@ -237,7 +237,7 @@
 		comk_update_option ("edit_image_id", -1);
 	}
 
-	function comku_get_user_description ($user_id)
+	function comku_get_user_description ($user_id) : string
 	{
 		$description = get_user_meta ($user_id, "description", true);
 

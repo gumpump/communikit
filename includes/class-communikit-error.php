@@ -23,7 +23,7 @@
 
 		public static function get_last_message () : string
 		{
-			return end (self::$messages);
+			return (string) end (self::$messages);
 		}
 
 		public static function count () : int

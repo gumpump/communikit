@@ -21,39 +21,7 @@
  * @author     Wolfgang Neue <info@communikit.de>
  */
 class CommuniKit_Admin
-{
-
-	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
-
-	/**
-	 * The version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
-	 */
-	private $version;
-
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
-	 */
-	public function __construct($plugin_name, $version)
-	{
-		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-	}
-	
+{	
 	/**
 	 * Add the options page
 	 * 
@@ -62,8 +30,8 @@ class CommuniKit_Admin
 	public function menu ()
 	{
 		add_submenu_page (	"users.php",
-							__("CommuniKit - Options", $this->plugin_name),
-							__("CommuniKit", $this->plugin_name),
+							__("CommuniKit - Options", "communikit"),
+							__("CommuniKit", "communikit"),
 							"manage_options",
 							sanitize_key ("comka_settings"),
 							array ($this, "menu_load"));
@@ -97,7 +65,7 @@ class CommuniKit_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_style ($this->plugin_name, plugin_dir_url ( __FILE__ ) . 'css/communikit-admin.css', array (), $this->version, 'all');
+		wp_enqueue_style ("communikit", plugin_dir_url ( __FILE__ ) . 'css/communikit-admin.css', array ());
 
 
 	}
@@ -121,6 +89,6 @@ class CommuniKit_Admin
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/communikit-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script ("communikit", plugin_dir_url( __FILE__ ) . 'js/communikit-admin.js', array( 'jquery' ));
 	}
 }

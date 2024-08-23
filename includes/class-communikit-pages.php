@@ -11,8 +11,8 @@
 							(
 								"post_title" => __("User", "communikit"),
 								"post_content" => $page_user_content,
-								"post_type" => __("page", "communikit"),
-								"post_status" => __("publish", "communikit")
+								"post_type" => "page",
+								"post_status" => "publish"
 							);
 
 			$page_user_id = wp_insert_post ($page_user);
@@ -32,8 +32,8 @@
 							(
 								"post_title" => __("Edit", "communikit"),
 								"post_content" => $page_edit_content,
-								"post_type" => __("page", "communikit"),
-								"post_status" => __("publish", "communikit")
+								"post_type" => "page",
+								"post_status" => "publish"
 							);
 
 			$page_edit_id = wp_insert_post ($page_edit);

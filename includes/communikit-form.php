@@ -99,6 +99,7 @@
 				$userdata["first_name"] = (isset ($_REQUEST["comki-firstname"])) ? $_REQUEST["comki-firstname"] : "";
 				$userdata["last_name"]	= (isset ($_REQUEST["comki-lastname"])) ? $_REQUEST["comki-lastname"] : "";
 				$userdata["show_admin_bar_front"] = "false"; // No boolean
+				// TODO: Add "get_lowest_rank ()" or something like that
 				$userdata["role"] = "comk-basic_user";
 
 				$user_id = wp_insert_user ($userdata);

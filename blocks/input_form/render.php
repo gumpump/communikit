@@ -1,4 +1,37 @@
 <?php
+	$visibility = (isset ($attributes["visibility"])) ? $attributes["visibility"] : "both";
+
+	$visible = false;
+
+	switch ($visibility)
+	{
+		case "both":
+		{
+			$visible = true;
+			break;
+		}
+
+		case "logged":
+		{
+			if (is_user_logged_in ())
+			{
+				$visible = true;
+			}
+
+			break;
+		}
+
+		case "unlogged":
+		{
+			if (!is_user_logged_in ())
+			{
+				$visible = true;
+			}
+
+			break;
+		}
+	}
+
 	// Get form type or set it to "sign_in" (Ternary operator)
 	// "Ternary" ... fancy
 	$form_type = (isset ($attributes["form_type"])) ? $attributes["form_type"] : "sign_in";
@@ -25,6 +58,9 @@
 	}
 
 	// All following html tags get their styles from the public css file of CommuniKit
+
+	if ($visible)
+	{
 ?>
 <form action="<?=$_SERVER["REQUEST_URI"]?>" method="POST" enctype="multipart/form-data">
 	<?php echo $form_fields; ?>
@@ -32,3 +68,6 @@
 		<input type="hidden" name="comki-type" value="<?php echo $form_type; ?>" />
 	</div>
 </form>
+<?php
+	}
+?>

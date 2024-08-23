@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-23 09:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin/class-communikit-admin.php:65
+msgid "CommuniKit - Options"
+msgstr ""
+
+#: admin/class-communikit-admin.php:66
+msgid "CommuniKit"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:47
+msgid "Page to diplay as user profile"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:59
+msgid "Page to diplay for editing user profiles"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:75
+msgid "Image to display as \"Edit\"-symbol"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:82
+msgid "Reset icon"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:83
+msgid "Don't forget to save your changes after resetting"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:90
+msgid "Show profile picture on admin page"
+msgstr ""
+
+#: admin/partials/communikit-admin-general.php:99
+msgid "Debug mode"
+msgstr ""
+
+#: admin/partials/communikit-admin-main.php:11
+msgid "General"
+msgstr ""
+
+#: admin/partials/communikit-admin-main.php:12
+msgid "Temp"
+msgstr ""
+
+#: blocks/box_edit_biography/render.php:16
+msgid "Change description"
+msgstr ""
+
+#: blocks/box_edit_image/render.php:14
+msgid "Current"
+msgstr ""
+
+#: blocks/box_edit_image/render.php:18
+msgid "Upcoming"
+msgstr ""
+
+#: blocks/box_loginout/render.php:21
+msgid "Log out"
+msgstr ""
+
+#: blocks/box_loginout/render.php:39
+msgid "Username"
+msgstr ""
+
+#: blocks/box_loginout/render.php:43
+msgid "Password"
+msgstr ""
+
+#: blocks/box_loginout/render.php:46
+msgid "Log in"
+msgstr ""
+
+#: blocks/input_field/render.php:8
+msgid "required"
+msgstr ""
+
+#: includes/class-communikit-capabilities.php:12
+msgid "Basic user"
+msgstr ""
+
+#: includes/class-communikit-pages.php:12
+msgid "User"
+msgstr ""
+
+#: includes/class-communikit-pages.php:14
+#: includes/class-communikit-pages.php:35
+msgid "page"
+msgstr ""
+
+#: includes/class-communikit-pages.php:15
+#: includes/class-communikit-pages.php:36
+msgid "publish"
+msgstr ""
+
+#: includes/class-communikit-pages.php:23
+msgid "Could not insert default user profile page"
+msgstr ""
+
+#: includes/class-communikit-pages.php:33
+msgid "Edit"
+msgstr ""
+
+#: includes/class-communikit-pages.php:44
+msgid "Could not insert default edit page"
+msgstr ""
+
+#: includes/communikit-form.php:13
+msgid "User already logged in"
+msgstr ""
+
+#: includes/communikit-form.php:24 includes/communikit-form.php:73
+msgid "Username already exists"
+msgstr ""
+
+#: includes/communikit-form.php:37
+msgid "Wrong username or wrong password"
+msgstr ""
+
+#: includes/communikit-form.php:67
+msgid "Missing input field"
+msgstr ""
+
+#: includes/communikit-form.php:79
+msgid "Invalid username"
+msgstr ""
+
+#: includes/communikit-form.php:85 includes/communikit-form.php:156
+msgid "Email address already exists"
+msgstr ""
+
+#: includes/communikit-form.php:91 includes/communikit-form.php:162
+msgid "Invalid email address"
+msgstr ""
+
+#: includes/communikit-form.php:136
+msgid "Could not find comki-bio input field"
+msgstr ""
+
+#: includes/communikit-user.php:11
+msgid "User name: Could not load username"
+msgstr ""
+
+#: includes/communikit-user.php:12
+msgid "Could not load username"
+msgstr ""
+
+#: includes/communikit-user.php:47
+msgid "User image: Could not decode user metadata"
+msgstr ""
+
+#: includes/communikit-user.php:54
+msgid "User image: Could not get user data"
+msgstr ""
+
+#: includes/communikit-user.php:69
+msgid "User image: Could not upload file"
+msgstr ""
+
+#: includes/communikit-user.php:75
+msgid "User image: Uploaded file is not an image"
+msgstr ""
+
+#: includes/communikit-user.php:85
+msgid "Profile-picture "
+msgstr ""
+
+#: includes/communikit-user.php:86
+msgid "Current profile picture of "
+msgstr ""
+
+#: includes/communikit-user.php:93
+msgid "User image: Could not insert file into media library"
+msgstr ""
+
+#: includes/communikit-user.php:128
+msgid "User page: Could not load the post slug"
+msgstr ""
+
+#: includes/communikit-user.php:149
+msgid "Edit page: Could not load the post slug"
+msgstr ""
+
+#: includes/communikit-user.php:171
+msgid "Edit image: Could not load custom image"
+msgstr ""
+
+#: includes/communikit-user.php:186
+msgid "Edit image: Could not upload file"
+msgstr ""
+
+#: includes/communikit-user.php:192
+msgid "Edit image: Uploaded file is not an image: "
+msgstr ""
+
+#: includes/communikit-user.php:200
+msgid "Edit-icon "
+msgstr ""
+
+#: includes/communikit-user.php:201
+msgid "Icon to show next to editable objects"
+msgstr ""
+
+#: includes/communikit-user.php:208
+msgid "Edit image: Could not insert file into media library"
+msgstr ""
+
+#: includes/communikit-user.php:246
+msgid "User description: Could not decode user metadata"
+msgstr ""
+
+#: includes/communikit-user.php:247
+msgid "Could not load the user description"
+msgstr ""

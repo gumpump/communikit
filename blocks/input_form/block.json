@@ -46,6 +46,10 @@
     }
   },
   "attributes": {
+    "visibility": {
+      "type": "string",
+      "default": "both"
+    },
     "form_type": {
       "type": "string",
       "default": "sign_in"

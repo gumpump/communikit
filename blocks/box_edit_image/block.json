@@ -1,23 +1,23 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "communikit/box-edit-image",
-  "version": "0.1.0",
-  "title": "CommuniKit - Box - Edit image",
-  "category": "comkb_category_box",
-  "icon": "edit",
-  "description": "Box providing a form for changing the user image",
-  "render": "file:./render.php",
-  "keywords": [
-    "form",
-    "user",
-    "profile",
-    "image",
-    "box"
-  ],
-  "example": {},
-  "textdomain": "communikit",
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "viewScript": "file:./view.js"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "communikit/box-edit-image",
+	"version": "0.1.0",
+	"title": "CommuniKit - Box - Edit image",
+	"category": "comkb_category_box",
+	"icon": "edit",
+	"description": "Box providing a form for changing the user image",
+	"render": "file:./render.php",
+	"keywords": [
+		"form",
+		"user",
+		"profile",
+		"image",
+		"box"
+	],
+	"example": {},
+	"textdomain": "communikit",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewScript": "file:./view.js"
 }

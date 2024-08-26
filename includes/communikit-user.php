@@ -15,6 +15,17 @@
 		return $user->display_name;
 	}
 
+	function comku_get_user_login ($user) : string
+	{
+		if ($user === false)
+		{
+			comk_add_error (__("User login: Could not load user login", "communikit"));
+			return "";
+		}
+
+		return $user->user_login;
+	}
+
 	function comku_get_user_image_fallback () : string
 	{
 		$image_path_alt = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"];
@@ -168,7 +179,6 @@
 
 		if ($option == -1)
 		{
-			comk_add_error (__("Edit image: Could not load custom image", "communikit"), CommuniKit_Error_Type::Warning);
 			return comku_get_edit_image_fallback ();
 		}
 

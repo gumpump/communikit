@@ -1,47 +1,49 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "communikit/user-image",
-  "title": "CommuniKit - User - Image",
-  "category": "comkb_category_user",
-  "description": "Profile image of a user",
-  "render": "file:./render.php",
-  "keywords": [
-    "profile",
-    "image",
-    "user",
-    "field"
-  ],
-  "textdomain": "communikit",
-  "version": "0.1.0",
-  "icon": "format-image",
-  "example": {},
-  "supports": {
-    "html": false,
-    "background": {
-      "backgroundImage": true,
-      "backgroundSize": true
-    },
-    "color": {
-      "background": true,
-      "gradients": true,
-      "text": false
-    },
-    "shadow": true,
-    "spacing": {
-      "margin": true,
-      "padding": true
-    }
-  },
-  "attributes": {
-    "location": {
-      "type": "string",
-      "default": "profile"
-    },
-    "rounded": {
-      "type": "boolean"
-    }
-  },
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "communikit/user-image",
+	"title": "CommuniKit - User - Image",
+	"category": "comkb_category_user",
+	"description": "Profile image of a user",
+	"render": "file:./render.php",
+	"keywords": [
+		"profile",
+		"image",
+		"user",
+		"field"
+	],
+	"textdomain": "communikit",
+	"version": "0.1.0",
+	"icon": "format-image",
+	"example": {},
+	"supports": {
+		"html": false,
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true
+		},
+		"color": {
+			"background": true,
+			"gradients": true,
+			"text": false
+		},
+		"shadow": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes":
+	{
+		"rounded":
+		{
+			"type": "boolean"
+		}
+	},
+	"usesContext":
+	[
+		"communikit/form-context"
+	],
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
 }

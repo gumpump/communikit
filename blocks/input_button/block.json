@@ -1,37 +1,42 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "communikit/input-button",
-  "title": "CommuniKit - Input - Button",
-  "ancestor": [
-    "communikit/input-form"
-  ],
-  "category": "comkb_category_form",
-  "description": "Input button for use in CommuniKit-forms",
-  "render": "file:./render.php",
-  "keywords": [
-    "form",
-    "button",
-    "submit",
-    "reset"
-  ],
-  "textdomain": "communikit",
-  "version": "0.1.0",
-  "icon": "button",
-  "example": {},
-  "supports": {
-    "html": false
-  },
-  "attributes": {
-    "button_type": {
-      "type": "string",
-      "default": "submit"
-    },
-    "button_label": {
-      "type": "string",
-      "default": "Button"
-    }
-  },
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "communikit/input-button",
+	"title": "CommuniKit - Input - Button",
+	"ancestor": [ "communikit/input-form" ],
+	"category": "comkb_category_form",
+	"description": "Input button for use in CommuniKit-forms",
+	"render": "file:./render.php",
+	"keywords": [
+		"form",
+		"button",
+		"submit",
+		"reset"
+	],
+	"textdomain": "communikit",
+	"version": "0.1.0",
+	"icon": "button",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes":
+	{
+		"button_type":
+		{
+			"type": "string",
+			"default": "submit"
+		},
+		"button_label":
+		{
+			"type": "string",
+			"default": "Button"
+		}
+	},
+	"usesContext":
+	[
+		"communikit/form-context"
+	],
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
 }

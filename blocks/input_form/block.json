@@ -1,68 +1,72 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "communikit/input-form",
-  "version": "0.1.0",
-  "title": "CommuniKit - Input - Form",
-  "category": "comkb_category_form",
-  "icon": "editor-table",
-  "description": "Input form containing all input fields",
-  "render": "file:./render.php",
-  "keywords": [
-    "form",
-    "login",
-    "box",
-    "group"
-  ],
-  "example": {},
-  "supports": {
-    "align": true,
-    "alignWide": true,
-    "ariaLabel": true,
-    "color": {
-      "background": true,
-      "gradients": true,
-      "text": true
-    },
-    "dimensions": {
-      "minHeight": true
-    },
-    "html": false,
-    "spacing": {
-      "margin": true,
-      "padding": true,
-      "blockGap": true
-    },
-    "typography": {
-      "fontSize": true,
-      "lineHeight": true
-    },
-    "layout": {
-      "allowSwitching": false,
-      "allowInheriting": false,
-      "default": {
-        "type": "flex"
-      }
-    }
-  },
-  "attributes": {
-    "visibility": {
-      "type": "string",
-      "default": "both"
-    },
-    "form_type": {
-      "type": "string",
-      "default": "sign_in"
-    },
-    "forwarding": {
-      "type": "boolean"
-    },
-    "post": {
-      "type": "object"
-    }
-  },
-  "textdomain": "communikit",
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "viewScript": "file:./view.js"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "communikit/input-form",
+	"version": "0.1.0",
+	"title": "CommuniKit - Input - Form",
+	"category": "comkb_category_form",
+	"icon": "editor-table",
+	"description": "Input form containing all input fields",
+	"render": "file:./render.php",
+	"keywords": ["form", "login", "box", "group"],
+	"example": {},
+	"supports": {
+		"align": true,
+		"alignWide": true,
+		"ariaLabel": true,
+		"color": {
+			"background": true,
+			"gradients": true,
+			"text": true
+		},
+		"dimensions": {
+			"minHeight": true
+		},
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"default": {
+				"type": "flex"
+			}
+		}
+	},
+	"attributes":
+	{
+		"visibility":
+		{
+			"type": "string",
+			"default": "both"
+		},
+		"form_type":
+		{
+			"type": "string",
+			"default": "sign_in"
+		},
+		"forwarding":
+		{
+			"type": "boolean"
+		},
+		"post":
+		{
+			"type": "object"
+		}
+	},
+	"providesContext":
+	{
+		"communikit/form-context": "visibility"
+	},
+	"textdomain": "communikit",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewScript": "file:./view.js"
 }

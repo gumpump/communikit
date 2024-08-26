@@ -1,7 +1,9 @@
 <?php
 	require_once plugin_dir_path (__FILE__) . '../../includes/communikit-user.php';
+
 	$user_id = get_current_user_id ();
 	$image_path = comku_get_user_image_url ($user_id);
+	$image_path_alt = comku_get_user_image_fallback ();
 
 	if (is_user_logged_in ())
 	{
@@ -10,11 +12,11 @@
 			<form action="<?=$_SERVER["REQUEST_URI"]?>" method="post" enctype="multipart/form-data">
 				<div class="comk-box_edit_inner_block">
 					<figure class="comk-box_edit_figure">
-						<img class="comk-box_edit_image_preview" src="<?php print ($image_path); ?>" />
+						<img class="comk-box_edit_image_preview" src="<?php echo $image_path; ?>" />
 						<figcaption><?php print (__("Current", "communikit")); ?></figcaption>
 					</figure>
 					<figure class="comk-box_edit_figure">
-						<img id="comk-box_edit_image_preview_target" class="comk-box_edit_image_preview" src="<?php print (comku_get_user_image_url (0)); ?>" />
+						<img id="comk-box_edit_image_preview_target" class="comk-box_edit_image_preview" src="<?php echo $image_path_alt; ?>" />
 						<figcaption><?php print (__("Upcoming", "communikit")); ?></figcaption>
 					</figure>
 				</div>

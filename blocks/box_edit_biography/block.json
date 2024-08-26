@@ -1,22 +1,22 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "communikit/box-edit-biography",
-  "version": "0.1.0",
-  "title": "CommuniKit - Box - Edit biography",
-  "category": "comkb_category_box",
-  "icon": "edit",
-  "description": "Box providing a form for changing the user biography",
-  "render": "file:./render.php",
-  "keywords": [
-    "form",
-    "user",
-    "profile",
-    "image",
-    "box"
-  ],
-  "example": {},
-  "textdomain": "communikit",
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "communikit/box-edit-biography",
+	"version": "0.1.0",
+	"title": "CommuniKit - Box - Edit biography",
+	"category": "comkb_category_box",
+	"icon": "edit",
+	"description": "Box providing a form for changing the user biography",
+	"render": "file:./render.php",
+	"keywords": [
+		"form",
+		"user",
+		"profile",
+		"image",
+		"box"
+	],
+	"example": {},
+	"textdomain": "communikit",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
 }

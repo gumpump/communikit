@@ -239,3 +239,40 @@
 
 		return implode ("", $new_content);
 	}
+
+	function comk_form_is_visible (string $value) : bool
+	{
+		$visible = false;
+
+		switch ($value)
+		{
+			case "both":
+			{
+				$visible = true;
+
+				break;
+			}
+
+			case "logged":
+			{
+				if (is_user_logged_in ())
+				{
+					$visible = true;
+				}
+
+				break;
+			}
+
+			case "unlogged":
+			{
+				if (!is_user_logged_in ())
+				{
+					$visible = true;
+				}
+
+				break;
+			}
+		}
+
+		return $visible;
+	}

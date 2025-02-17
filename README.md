@@ -1,3 +1,7 @@
+## Current state of this project
+I am currently waiting for the company behind WordPress, especially the CEO, to stop doing bullshit. When he decides to stop being an asshole, this project will go on.
+
+# CommuniKit
 Hi there,
 
 I started this project because the already existing WordPress plugins for handling community websites didn't offer what I needed. I required Gutenberg blocks that I could customize to match my website's style.
